@@ -11,5 +11,5 @@
 
 - Documentada com Swagger UI.
 - Utilizando Javascript.
-- Banco de dados MySQL.
+- Banco de dados MongoDB.
 - API REST com Express.
