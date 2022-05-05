@@ -1,0 +1,281 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Cristolândia API",
+    "description": "API desenvolvida para prover dados ao front-end do sistema de cadastros da Cristolandia",
+    "contact": {
+      "email": "vinicius802010@gmail.com"
+    }
+  },
+  "host": "localhost:3333",
+  "basePath": "/cristolandia",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/cadastarAcolhido": {
+      "post": {
+        "tags": [
+          "Acolhidos"
+        ],
+        "summary": "Cadastra um novo acolhido no banco de dados.",
+        "description": "Essa rota é responsável por cadastrar um novo acolhido.",
+        "parameters": [
+          {
+            "name": "dados do acolhido",
+            "in": "body",
+            "description": "Informações do acolhido.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CadastroDoAcolhido"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/todosOsAcolhidos": {
+      "get": {
+        "tags": [
+          "Acolhidos"
+        ],
+        "summary": "Retorna todos os acolhidos cadastrados",
+        "description": "Retorna todos os acolhidos cadastrados",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/acolhidoPorMatricula": {
+      "get": {
+        "tags": [
+          "Acolhidos"
+        ],
+        "summary": "Retorna um acolhido utilizando sua matrícula.",
+        "description": "Retorna o acolhido que estiver a matrícula cadastrada no banco.",
+        "parameters": [
+          {
+            "name": "matricula",
+            "description": "Matrícula do acolhido.",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/acolhidosPorUnidade": {
+      "get": {
+        "tags": [
+          "Acolhidos"
+        ],
+        "summary": "Retorna um acolhido utilizando a unidade que está alocado.",
+        "description": "Retorna o acolhido que estiver na unidade informada.",
+        "parameters": [
+          {
+            "name": "unidade",
+            "description": "Unidade que o acolhido está alocado.",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/deletarAcolhido": {
+      "delete": {
+        "tags": [
+          "Acolhidos"
+        ],
+        "summary": "Remove um acolhido do banco de dados.",
+        "description": "Remove um acolhido do banco de dados localizando-o através de sua matrícula.",
+        "parameters": [
+          {
+            "name": "matricula",
+            "description": "Matrícula do acolhido.",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/atualizarAcolhido/{matricula}": {
+      "put": {
+        "tags": [
+          "Acolhidos"
+        ],
+        "summary": "Atualiza informações de um acolhido.",
+        "description": "Atualiza as informações do acolhido, localizando-o através de sua matrícula, repassando os dados necessários. ",
+        "parameters": [
+          {
+            "name": "matricula",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Matrícula do acolhido."
+          },
+          {
+            "name": "dados atualizados",
+            "in": "body",
+            "description": "Book information for update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CadastroDoAcolhido"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CadastroDoAcolhido": {
+      "type": "object",
+      "properties": {
+        "nomeCompleto": {
+          "type": "string",
+          "example": "Quentin Tarantino "
+        },
+        "nomeDaMae": {
+          "type": "string",
+          "example": "Patrícia Amorim"
+        },
+        "nomeDoPai": {
+          "type": "string",
+          "example": "João Planaltina"
+        },
+        "naturalidade": {
+          "type": "string",
+          "example": "Brasileiro"
+        },
+        "nacionalidade": {
+          "type": "string",
+          "example": "Brasileiro"
+        },
+        "idade": {
+          "type": "number",
+          "example": 59
+        },
+        "dataDeNascimento": {
+          "type": "string",
+          "example": "05-05-2022"
+        },
+        "estadoCivil": {
+          "type": "string",
+          "example": "Solteiro"
+        },
+        "raca": {
+          "type": "string",
+          "example": "Branco"
+        },
+        "escolaridade": {
+          "type": "string",
+          "example": "Superior Completo"
+        },
+        "profissao": {
+          "type": "string",
+          "example": "Diretor de Cinema"
+        },
+        "CPF": {
+          "type": "string",
+          "example": "123.456.789-10"
+        },
+        "sexo": {
+          "type": "string",
+          "example": "Masculino"
+        },
+        "RG": {
+          "type": "string",
+          "example": "12.345.678"
+        },
+        "estadoEmissor": {
+          "type": "string",
+          "example": "PE"
+        },
+        "dataDeEmissaoRG": {
+          "type": "string",
+          "example": "05-05-2022"
+        },
+        "orgaoEmissor": {
+          "type": "string",
+          "example": "SDS"
+        },
+        "CEP": {
+          "type": "string",
+          "example": "52091-240"
+        },
+        "endereco": {
+          "type": "string",
+          "example": "Rua Córrego do boleiro, 221"
+        },
+        "estado": {
+          "type": "string",
+          "example": "PE"
+        },
+        "municipio": {
+          "type": "string",
+          "example": "Recife"
+        },
+        "bairro": {
+          "type": "string",
+          "example": "Nova Descoberta"
+        },
+        "unidadeDeOrigem": {
+          "type": "string",
+          "example": "Recife Centro"
+        },
+        "numeroDeInternacoes": {
+          "type": "number",
+          "example": 0
+        },
+        "contatoDeEmergencia1": {
+          "type": "string",
+          "example": "81 98726-7365"
+        },
+        "contatoDeEmergencia2": {
+          "type": "string",
+          "example": "81 98342-6557"
+        },
+        "dataDeSaida": {
+          "type": "string",
+          "example": "06-05-2022"
+        },
+        "matricula": {
+          "type": "string",
+          "example": "02307485"
+        }
+      }
+    }
+  }
+}

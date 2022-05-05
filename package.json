@@ -1,0 +1,38 @@
+{
+    "name": "cristolandia-api",
+    "version": "1.0.0",
+    "description": "API desenvolvida para prover dados ao front-end do sistema de cadastros da Cristolandia",
+    "main": "index.js",
+    "directories": {
+        "doc": "doc"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "npm run swagger-autogen && npm run nodemon index.js",
+        "swagger-autogen": "node ./src/config/swagger.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Vinicius-AndradeM/Cristolandia-API.git"
+    },
+    "author": "Vinícius Andrade",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Vinicius-AndradeM/Cristolandia-API/issues"
+    },
+    "homepage": "https://github.com/Vinicius-AndradeM/Cristolandia-API#readme",
+    "dependencies": {
+        "@types/mongoose": "^5.11.97",
+        "body-parser": "^1.20.0",
+        "dotenv": "^16.0.0",
+        "express": "^4.18.1",
+        "mongo-express": "^1.0.0-alpha.4",
+        "mongoose": "^6.3.2",
+        "swagger-ui-express": "^4.3.0"
+    },
+    "devDependencies": {
+        "jest": "^28.0.3",
+        "nodemon": "^2.0.16",
+        "swagger-autogen": "^2.21.1"
+    }
+}
