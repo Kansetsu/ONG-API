@@ -29,7 +29,11 @@ npm i
 ```javascript  
 //exemplo de link de conexão:
 
-URL: "mongodb://localhost:0000/suaCollection"
+URL="mongodb://localhost:0000/suaCollection"
+
+//por padrão a URL de testes é: 
+
+URL="mongodb://localhost:27017/Acolhidos"
 ``` 
 ### Após instalar as dependências, a documentação ficará visível na rota http://localhost:3333/cristolandia/doc/ ao executar a API com o comando:
 ```javascript  
@@ -39,6 +43,7 @@ npm start
 ### POST 🟩
 #### **Cadastrar Acolhidos** : http://localhost:3333/cristolandia/cadastrarAcolhido 
 ![Post-img](https://images2.imgbox.com/87/ba/kU62fbEd_o.png)
+- Recebe um `json` para inserção dos dados. Dentro da aplicação recebe um objeto javascript que é convertido automaticamente para `json`
 - Cadastra os acolhidos com as informações fornecidas. Por padrão o `schema` passado é: 
 ```javascript  
  {
