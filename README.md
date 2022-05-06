@@ -109,16 +109,16 @@ npm start
             matricula: "02307485"
         } 
 ``` 
-#### **Retorna os acolhidos cadastrados, localizando eles por sua matrícula:** http://localhost:3333/cristolandia/acolhidosPorMatricula
--  O retorno é similar ao da rota anterior.
+#### **Retorna um acolhido cadastrado, localizando ele por sua matrícula:** http://localhost:3333/cristolandia/acolhidosPorMatricula
+-  O retorno é similar ao da rota anterior, porém retorna apenas o objeto que tiver a mesma matrícula solicitada.
 ![GetAcolhido-img](https://images2.imgbox.com/53/61/keY1FjSS_o.png)
 #### **Retorna os acolhidos cadastrados, localizando eles pela sua unidade:** http://localhost:3333/cristolandia/acolhidosPorUnidade
--  Funciona como a rota anterior, alterando apenas o parâmetro utilizado para buscar os acolhidos.
+-  Funciona como a rota anterior, alterando apenas o parâmetro utilizado para buscar os acolhidos. Essa rota retorna todos os que tiverem a unidade solicitada, não apenas um.
 ![GetUnidade-Img](https://images2.imgbox.com/2c/57/LazcELm8_o.png)
 ### DELETE 🟥
 #### **Deletar Acolhidos** : http://localhost:3333/cristolandia/deletarAcolhido
 ![Delete-Img](https://images2.imgbox.com/1d/9e/HLkEDstj_o.png)
-- Remove um acolhido do banco de dados, localizando ele com sua matrícula. Essa rota retorna um `json` com duas informações. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado. Retorna também um contador informando se ele foi deletado ou não, sendo `0` para não deletado e `1` para deletado. 
+- Remove um acolhido do banco de dados, localizando ele com sua matrícula. Essa rota retorna um `json` com duas informações. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado, e retorna também um contador informando se ele foi deletado ou não, sendo `0` para não deletado e `1` para deletado. 
 ```javascript
 {
   "acknowledged": true,
