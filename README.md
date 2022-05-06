@@ -118,7 +118,7 @@ npm start
 ### DELETE 🟥
 #### **Deletar Acolhidos** : http://localhost:3333/cristolandia/deletarAcolhido
 ![Delete-Img](https://images2.imgbox.com/1d/9e/HLkEDstj_o.png)
-- Remove um acolhido do banco de dados, localizando ele com sua matrícula. Essa rota retorna um `json` com duas informações. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado. Retorna também um contador informando se ele foi deletado ou não. 
+- Remove um acolhido do banco de dados, localizando ele com sua matrícula. Essa rota retorna um `json` com duas informações. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado. Retorna também um contador informando se ele foi deletado ou não, sendo `0` para não deletado e `1` para deletado. 
 ```javascript
 {
   "acknowledged": true,
