@@ -70,7 +70,7 @@ npm start
         contatoDeEmergencia2: { type: String },
         dataDeSaida: { type: String },
         matricula: { type: String },
-    }
+ }
 ``` 
 
 ### GET 🟦

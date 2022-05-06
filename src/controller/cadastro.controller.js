@@ -3,7 +3,7 @@ const controller = express.Router();
 const cadastroService = require("../services/cadastro.service");
 
 
-// ---IMPORTANT---
+// ---IMPORTANTE---
 //Os comentários abaixo estão gerando as informações para o swagger_output.json quando ele é criado.
 
 
