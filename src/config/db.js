@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const express = require("express");
 
 function mongoConnection() {
     mongoose

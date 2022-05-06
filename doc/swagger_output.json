@@ -91,7 +91,7 @@
         "description": "Retorna o acolhido que estiver na unidade informada.",
         "parameters": [
           {
-            "name": "unidade",
+            "name": "unidadeDeOrigem",
             "description": "Unidade que o acolhido está alocado.",
             "in": "query",
             "type": "string"

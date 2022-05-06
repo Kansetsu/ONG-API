@@ -1,10 +1,8 @@
-const mongoose = require("mongoose");
-const cadastroSchema = require("../schema/cadastro.schema");
-const cadastroModel = mongoose.model("Acolhido", cadastroSchema);
+const cadastroModel = require("../schema/cadastro.schema");
 
-module.exports = {
+const cadastroService = {
     create: (dataInsert) => {
-        return cadastroModel.create({ ...dataInsert });
+        return cadastroModel.create(dataInsert);
     },
 
     getTodosAcolhidos: () => {
@@ -12,18 +10,22 @@ module.exports = {
     },
 
     getAcolhidoPorMatricula: (matricula) => {
-        return cadastroModel.findOne({ matricula });
+        return cadastroModel.findOne(matricula);
     },
 
     getAcolhidosPorUnidade: (unidadeDeOrigem) => {
-        return cadastroModel.find({ unidadeDeOrigem });
+        return cadastroModel.find(unidadeDeOrigem);
     },
 
     deleteAcolhido: (matricula) => {
-        return cadastroModel.deleteOne({ matricula });
+        return cadastroModel.deleteOne(matricula);
     },
 
     updateAcolhido: (matricula, update) => {
-        return cadastroModel.findOneAndUpdate({ matricula }, update, { new: true });
+        console.log(matricula);
+        console.log({...update});
+        return cadastroModel.findOneAndUpdate( matricula , update , { new: true });
     },
 };
+
+module.exports = cadastroService;

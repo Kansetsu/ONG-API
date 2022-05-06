@@ -1,6 +1,6 @@
 const express = require("express");
 const controller = express.Router();
-const service = require("../services/cadastro.service");
+const cadastroService = require("../services/cadastro.service");
 
 
 // ---IMPORTANT---
@@ -17,14 +17,15 @@ controller.post("/cadastarAcolhido", (req, res) => {
         required: true,
         schema: { $ref: "#/definitions/CadastroDoAcolhido"}
     }*/
-    res.send(service.create(req.body));
+
+    res.send(cadastroService.create(req.body));
 });
 
 controller.get("/todosOsAcolhidos", async (req, res) => {
     // #swagger.tags = ['Acolhidos']    
     // #swagger.summary = 'Retorna todos os acolhidos cadastrados'
     // #swagger.description = 'Retorna todos os acolhidos cadastrados'
-    res.send(await service.getTodosAcolhidos());
+    res.send(await cadastroService.getTodosAcolhidos());
 });
 
 controller.get("/acolhidoPorMatricula", async (req, res) => {
@@ -32,15 +33,16 @@ controller.get("/acolhidoPorMatricula", async (req, res) => {
     // #swagger.summary = 'Retorna um acolhido utilizando sua matrícula.'
     // #swagger.description = 'Retorna o acolhido que estiver a matrícula cadastrada no banco.'
     // #swagger.parameters['matricula'] = { description: 'Matrícula do acolhido.' } 
-    res.send(await service.getAcolhidoPorMatricula(req.query));
+    res.send(await cadastroService.getAcolhidoPorMatricula(req.query));
 });
 
 controller.get("/acolhidosPorUnidade", async (req, res) => {
     // #swagger.tags = ['Acolhidos']
     // #swagger.summary = 'Retorna um acolhido utilizando a unidade que está alocado.'
     // #swagger.description = 'Retorna o acolhido que estiver na unidade informada.'
-    // #swagger.parameters['unidade'] = { description: 'Unidade que o acolhido está alocado.' } 
-    res.send(await service.getAcolhidosPorUnidade(req.query));
+    // #swagger.parameters['unidadeDeOrigem'] = { description: 'Unidade que o acolhido está alocado.' } 
+    console.log(req.query);
+    res.send(await cadastroService.getAcolhidosPorUnidade(req.query));
 });
 
 controller.delete("/deletarAcolhido", async (req, res) => {
@@ -48,7 +50,7 @@ controller.delete("/deletarAcolhido", async (req, res) => {
     // #swagger.summary = 'Remove um acolhido do banco de dados.'
     // #swagger.description = 'Remove um acolhido do banco de dados localizando-o através de sua matrícula.'
     // #swagger.parameters['matricula'] = { description: 'Matrícula do acolhido.'}    
-    res.send(await service.deleteAcolhido(req.query));
+    res.send(await cadastroService.deleteAcolhido(req.query));
 });
 
 controller.put("/atualizarAcolhido/:matricula", async (req, res) => {
@@ -62,7 +64,7 @@ controller.put("/atualizarAcolhido/:matricula", async (req, res) => {
         required: true,
         schema: { $ref: "#/definitions/CadastroDoAcolhido"}
     }*/    
-    res.send(await service.updateAcolhido(req.params, req.query));
+    res.send(await cadastroService.updateAcolhido(req.params, req.body));
 });
 
 module.exports = controller
