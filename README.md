@@ -25,6 +25,12 @@ ou
 ```javascript  
 npm i 
 ``` 
+#### Obs.: O link de conexão com o banco de dados está cadastro em um ```.env```, então é necessária a crianção do arquivo e lá adicionar a variável *URL + o link de conexão com o banco de dados.*: 
+```javascript  
+//exemplo de link de conexão:
+
+URL: "mongodb://localhost:0000/suaCollection"
+``` 
 ### Após instaladas as dependências a documentação ficará visível na rota http://localhost:3333/cristolandia/doc/ ao executar a API com o comando:
 ```javascript  
 npm start 
