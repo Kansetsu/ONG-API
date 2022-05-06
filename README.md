@@ -43,6 +43,7 @@ npm start
 ### POST 🟩
 #### **Cadastrar Acolhidos** : http://localhost:3333/cristolandia/cadastrarAcolhido 
 ![Post-img](https://images2.imgbox.com/87/ba/kU62fbEd_o.png)
+- Recebe um `json` para inserção dos dados. Dentro da aplicação recebe um objeto javascript que é convertido automaticamente para `json`
 - Cadastra os acolhidos com as informações fornecidas. Por padrão o `schema` passado é: 
 ```javascript  
  {
