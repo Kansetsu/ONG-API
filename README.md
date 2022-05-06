@@ -25,7 +25,7 @@ ou
 ```javascript  
 npm i 
 ``` 
-#### Obs.: O link de conexão com o banco de dados está registrado em um ```.env```, então é necessária a criação do arquivo e adicionar a variável *URL + o link de conexão com o banco de dados.*
+#### Obs.: O link de conexão com o banco de dados está registrado em um `.env`, então é necessária a criação do arquivo e adicionar a variável *URL + o link de conexão com o banco de dados.*
 ```javascript  
 //exemplo de link de conexão:
 
@@ -39,7 +39,7 @@ npm start
 ### POST 🟩
 #### **Cadastrar Acolhidos** : http://localhost:3333/cristolandia/cadastrarAcolhido 
 ![Post-img](https://images2.imgbox.com/87/ba/kU62fbEd_o.png)
-- Cadastra os acolhidos com as informações fornecidas. Por padrão o ```schema``` passado é: 
+- Cadastra os acolhidos com as informações fornecidas. Por padrão o `schema` passado é: 
 ```javascript  
  {
         nomeCompleto: { type: String },
