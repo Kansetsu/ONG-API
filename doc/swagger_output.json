@@ -20,7 +20,7 @@
     "application/json"
   ],
   "paths": {
-    "/cadastarAcolhido": {
+    "/cadastrarAcolhido": {
       "post": {
         "tags": [
           "Acolhidos"
