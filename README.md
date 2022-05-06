@@ -1,4 +1,4 @@
-# Cristolândia-AP=I ✝️
+# Cristolândia-API ✝️
 
 ### Proposta 📝: 
 
@@ -22,7 +22,7 @@
 npm start 
 ``` 
 ## Rotas 🌐: 
-### POST
+### POST 🟩
 #### **Cadastrar Acolhidos** : http://localhost:3333/cristolandia/cadastrarAcolhido 
 - Cadastra os acolhidos com as informações fornecidas. Por padrão o schema passado é: 
 ```javascript  
@@ -57,7 +57,7 @@ npm start
         matricula: { type: String },
     }
 ``` 
-### GET
+### GET 🟦
 #### **Retorna todos os acolhidos cadastrados**: http://localhost:3333/cristolandia/todosOsAcolhidos
 - Retorna todos os acolhidos que estiverem cadastrados no banco de dados. Retorna um objeto Javascript como no exemplo abaixo: 
 ```javascript  
@@ -97,7 +97,7 @@ npm start
 #### **Retorna os acolhidos cadastrados localizando eles pela sua unidade:** http://localhost:3333/cristolandia/acolhidosPorUnidade
 -  Funciona como a rota anterior, alterando apenas o parâmetro utilizado para buscar os acolhidos.
 
-### DELETE
+### DELETE 🟥
 #### **Deletar Acolhidos** : http://localhost:3333/cristolandia/deletarAcolhido
 - Remove um acolhido do banco de dados, localizando ele com sua matrícula. Essa rota retorna um json com duas informaçõe. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado. Retorna também um contador informando se ele foi deletado ou não. 
 ```javascript
@@ -106,6 +106,6 @@ npm start
   "deletedCount": 1
 }
 ```
-### PUT
+### PUT 🟨
 #### **Atualizar informações do acolhido** : http://localhost:3333/cristolandia/atualizarAcolhido
 - Atualiza as informações do acolhido. Localizando ele através de sua matrícula e passando os dados a serem atualizados. Similar ao cadastro, porém precisando localizar o acolhido. 
