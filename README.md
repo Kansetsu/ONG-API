@@ -10,7 +10,7 @@
 ### Tecnologias 🌎: 
 
 - Documentada com Swagger UI.
-- Utilizando Javascript.
+- Utilizando Javascript no NodeJS.
 - Banco de dados MongoDB.
 - API REST com Express.
 - Testes unitários com Jest.
