@@ -31,7 +31,7 @@ npm i
 
 URL: "mongodb://localhost:0000/suaCollection"
 ``` 
-### Após instaladas as dependências a documentação ficará visível na rota http://localhost:3333/cristolandia/doc/ ao executar a API com o comando:
+### Após instalar as dependências, a documentação ficará visível na rota http://localhost:3333/cristolandia/doc/ ao executar a API com o comando:
 ```javascript  
 npm start 
 ``` 
@@ -109,12 +109,12 @@ npm start
             matricula: "02307485"
         } 
 ``` 
-#### **Retorna os acolhidos cadastrados localizando eles por sua matrícula:** http://localhost:3333/cristolandia/acolhidosPorMatricula
-![GetAcolhido-img](https://images2.imgbox.com/53/61/keY1FjSS_o.png)
+#### **Retorna os acolhidos cadastrados, localizando eles por sua matrícula:** http://localhost:3333/cristolandia/acolhidosPorMatricula
 -  O retorno é similar ao da rota anterior.
-#### **Retorna os acolhidos cadastrados localizando eles pela sua unidade:** http://localhost:3333/cristolandia/acolhidosPorUnidade
-![GetUnidade-Img](https://images2.imgbox.com/2c/57/LazcELm8_o.png)
+![GetAcolhido-img](https://images2.imgbox.com/53/61/keY1FjSS_o.png)
+#### **Retorna os acolhidos cadastrados, localizando eles pela sua unidade:** http://localhost:3333/cristolandia/acolhidosPorUnidade
 -  Funciona como a rota anterior, alterando apenas o parâmetro utilizado para buscar os acolhidos.
+![GetUnidade-Img](https://images2.imgbox.com/2c/57/LazcELm8_o.png)
 ### DELETE 🟥
 #### **Deletar Acolhidos** : http://localhost:3333/cristolandia/deletarAcolhido
 ![Delete-Img](https://images2.imgbox.com/1d/9e/HLkEDstj_o.png)
