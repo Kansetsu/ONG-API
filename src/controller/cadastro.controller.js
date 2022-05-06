@@ -49,7 +49,7 @@ controller.delete("/deletarAcolhido", async (req, res) => {
     // #swagger.tags = ['Acolhidos']
     // #swagger.summary = 'Remove um acolhido do banco de dados.'
     // #swagger.description = 'Remove um acolhido do banco de dados localizando-o através de sua matrícula.'
-    // #swagger.parameters['matricula'] = { description: 'Matrícula do acolhido.'}    
+    // #swagger.parameters['matricula'] = { description: 'Matrícula do acolhido.', required: true}    
     res.send(await cadastroService.deleteAcolhido(req.query));
 });
 

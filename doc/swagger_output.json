@@ -115,6 +115,7 @@
           {
             "name": "matricula",
             "description": "Matrícula do acolhido.",
+            "required": true,
             "in": "query",
             "type": "string"
           }
