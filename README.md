@@ -25,7 +25,7 @@ ou
 ```javascript  
 npm i 
 ``` 
-#### Obs.: O link de conexão com o banco de dados está cadastro em um ```.env```, então é necessária a criação do arquivo e adicionar a variável *URL + o link de conexão com o banco de dados.*
+#### Obs.: O link de conexão com o banco de dados está registrado em um ```.env```, então é necessária a criação do arquivo e adicionar a variável *URL + o link de conexão com o banco de dados.*
 ```javascript  
 //exemplo de link de conexão:
 
