@@ -76,7 +76,7 @@ npm start
 ### GET 🟦
 #### **Retorna todos os acolhidos cadastrados**: http://localhost:3333/cristolandia/todosOsAcolhidos
 ![GetAll-img](https://images2.imgbox.com/15/63/bUa4ef8q_o.png)
-- Retorna todos os acolhidos que estiverem cadastrados no banco de dados. Retorna um ```json``` que é convertido para um objeto Javascript como no exemplo abaixo: 
+- Retorna todos os acolhidos que estiverem cadastrados no banco de dados. Retorna um `json` que é convertido para um objeto Javascript como no exemplo abaixo: 
 ```javascript  
      CadastroDoAcolhido: {
             nomeCompleto: "Quentin Tarantino ",
@@ -118,7 +118,7 @@ npm start
 ### DELETE 🟥
 #### **Deletar Acolhidos** : http://localhost:3333/cristolandia/deletarAcolhido
 ![Delete-Img](https://images2.imgbox.com/1d/9e/HLkEDstj_o.png)
-- Remove um acolhido do banco de dados, localizando ele com sua matrícula. Essa rota retorna um json com duas informaçõe. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado. Retorna também um contador informando se ele foi deletado ou não. 
+- Remove um acolhido do banco de dados, localizando ele com sua matrícula. Essa rota retorna um `json` com duas informações. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado. Retorna também um contador informando se ele foi deletado ou não. 
 ```javascript
 {
   "acknowledged": true,
@@ -130,3 +130,7 @@ npm start
 #### **Atualizar informações do acolhido** : http://localhost:3333/cristolandia/atualizarAcolhido
 ![Update-Img](https://images2.imgbox.com/5c/ac/GaRR6q3v_o.png)
 - Atualiza as informações do acolhido. Localizando ele através de sua matrícula e passando os dados a serem atualizados. Similar ao cadastro, porém precisando localizar o acolhido. 
+
+### Suporte 🆘
+
+#### Em casos de dúvidas ou sugestôes entrar em contato com o time exódia através do nosso [email](mailto:storeexodia@gmail.com)!
