@@ -13,11 +13,19 @@
 - Utilizando Javascript.
 - Banco de dados MongoDB.
 - API REST com Express.
-
+- Testes unitários com Jest.
 
 ## Documentação 📃:
 
-### Ela ficará visível na rota http://localhost:3333/cristolandia/doc/ ao executar a API 💾
+### Instalem as dependências antes de iniciar a API. 
+```javascript  
+npm install 
+``` 
+ou 
+```javascript  
+npm i 
+``` 
+### Após instaladas as dependências a documentação ficará visível na rota http://localhost:3333/cristolandia/doc/ ao executar a API com o comando:
 ```javascript  
 npm start 
 ``` 
