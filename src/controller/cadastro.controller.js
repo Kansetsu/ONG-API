@@ -7,7 +7,7 @@ const cadastroService = require("../services/cadastro.service");
 //Os comentários abaixo estão gerando as informações para o swagger_output.json quando ele é criado.
 
 
-controller.post("/cadastarAcolhido", (req, res) => {
+controller.post("/cadastrarAcolhido", (req, res) => {
     // #swagger.tags = ['Acolhidos']
     // #swagger.summary = 'Cadastra um novo acolhido no banco de dados.'
     // #swagger.description = 'Essa rota é responsável por cadastrar um novo acolhido.'
