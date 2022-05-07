@@ -39,7 +39,10 @@ URL="mongodb://localhost:27017/Acolhidos"
 ```javascript  
 npm start 
 ``` 
-## Rotas 🌐: 
+## Rotas 🌐:
+
+## Acolhidos 🙎‍♂️
+
 ### POST 🟩
 #### **Cadastrar Acolhidos** : http://localhost:3333/cristolandia/cadastrarAcolhido 
 ![Post-img](https://images2.imgbox.com/87/ba/kU62fbEd_o.png)
@@ -132,9 +135,67 @@ npm start
 ```
 
 ### PUT 🟨
-#### **Atualizar informações do acolhido** : http://localhost:3333/cristolandia/atualizarAcolhido
+#### **Atualizar informações do acolhido** : http://localhost:3333/cristolandia/atualizarAcolhido/:matricula
 ![Update-Img](https://images2.imgbox.com/5c/ac/GaRR6q3v_o.png)
 - Atualiza as informações do acolhido. Localizando ele através de sua matrícula e passando os dados a serem atualizados. Similar ao cadastro, porém precisando localizar o acolhido. 
+
+## Credenciais 🔑
+
+#### **Cadastrar credencial** : http://localhost:3333/cristolandia/cadastrarAcesso
+![Post-img](https://images2.imgbox.com/ca/04/lOBORy0k_o.png)
+- Recebe um `json` para inserção dos dados. Dentro da aplicação recebe um objeto javascript que é convertido automaticamente para `json`
+- Cadastra a credencial com as informações fornecidas. Por padrão o `schema` passado é: 
+```javascript
+{
+    nome: { type: String },
+    sobrenome: {type: String},
+    login: { type: String },
+    senha: { type: String },
+    admin: { type: Boolean }
+}
+```
+### GET 🟦
+#### **Retorna todas as credenciais cadastradas**: http://localhost:3333/cristolandia/buscarTodosOsCadastros
+![GetAll-img](https://images2.imgbox.com/f2/78/VXNa20hN_o.png)
+- Retorna todos as credenciais que estiverem cadastrados no banco de dados. Retorna um `json` que é convertido para um objeto Javascript como no exemplo abaixo: 
+```javascript 
+{
+    "_id": "6275e1fab88bd4a2af95216e",
+    "nome": "Valentina",
+    "sobrenome": "Silva",
+    "login": "01304487",
+    "senha": "123456",
+    "admin": true,
+    "__v": 0
+  },
+  {
+    "_id": "6275e221b88bd4a2af952170",
+    "nome": "Coralina",
+    "sobrenome": "Oliveira",
+    "login": "01304488",
+    "senha": "12345",
+    "admin": true,
+    "__v": 0
+  }
+```
+#### **Retorna uma credencial cadastrada, localizando-a por seu login:** http://localhost:3333/cristolandia/buscarCadastro
+-  O retorno é similar ao da rota anterior, porém retorna apenas o objeto que tiver a mesma matrícula solicitada.
+![GetAcolhido-img](https://images2.imgbox.com/a4/b8/DUDxMSDv_o.png)
+
+### DELETE 🟥
+#### **Deletar Credencial** : http://localhost:3333/cristolandia/deletarCadastro
+![Delete-Img](https://images2.imgbox.com/49/14/z5cXKtSg_o.png)
+- Remove uma credencial do banco de dados, localizando-a com seu login. Essa rota retorna um `json` com duas informações. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado, e retorna também um contador informando se ele foi deletado ou não, sendo `0` para não deletado e `1` para deletado. 
+```javascript
+{
+  "acknowledged": true,
+  "deletedCount": 1
+}
+```
+### PUT 🟨
+#### **Atualizar informações do acolhido** : http://localhost:3333/cristolandia/atualizarSenha/:login
+![Update-Img](https://images2.imgbox.com/17/1a/i8ucOJ5T_o.png)
+- Atualiza as informações de uma credencial. Localizando-a através de seu login e passando os dados a serem atualizados. Similar ao cadastro, porém precisando localizar a credencial. 
 
 ### Suporte 🆘
 
