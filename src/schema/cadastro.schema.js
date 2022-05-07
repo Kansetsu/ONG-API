@@ -35,4 +35,4 @@ const cadastroSchema = new mongoose.Schema(
 
 const cadastroModel = mongoose.model("Acolhido", cadastroSchema);
 
-module.exports = cadastroModel;
+module.exports = {cadastroModel, cadastroSchema};
