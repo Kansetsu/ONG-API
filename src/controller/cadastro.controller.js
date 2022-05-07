@@ -6,7 +6,6 @@ const cadastroService = require("../services/cadastro.service");
 // ---IMPORTANTE---
 //Os comentários abaixo estão gerando as informações para o swagger_output.json quando ele é criado.
 
-
 controller.post("/cadastrarAcolhido", (req, res) => {
     // #swagger.tags = ['Acolhidos']
     // #swagger.summary = 'Cadastra um novo acolhido no banco de dados.'
@@ -60,7 +59,7 @@ controller.put("/atualizarAcolhido/:matricula", async (req, res) => {
     // #swagger.parameters['matricula'] = { description: 'Matrícula do acolhido.' }
     /* #swagger.parameters['dados atualizados'] = {
         in: 'body',
-        description: 'Book information for update',
+        description: 'Acolhido atualizado.',
         required: true,
         schema: { $ref: "#/definitions/CadastroDoAcolhido"}
     }*/    

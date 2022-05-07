@@ -145,10 +145,128 @@
           {
             "name": "dados atualizados",
             "in": "body",
-            "description": "Book information for update",
+            "description": "Acolhido atualizado.",
             "required": true,
             "schema": {
               "$ref": "#/definitions/CadastroDoAcolhido"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/cadastrarAcesso": {
+      "post": {
+        "tags": [
+          "Credencial"
+        ],
+        "summary": "Cadastra uma nova credencial no banco de dados.",
+        "description": "Essa rota é responsável por cadastrar uma nova credencial.",
+        "parameters": [
+          {
+            "name": "dados da credencial",
+            "in": "body",
+            "description": "Informações da credencial.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CadastroDaCredencial"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/buscarCadastro": {
+      "get": {
+        "tags": [
+          "Credencial"
+        ],
+        "summary": "Retorna uma credencial pelo login.",
+        "description": "Retorna uma credencial pelo login.",
+        "parameters": [
+          {
+            "name": "login",
+            "description": "Login da credencial.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/buscarTodosOsCadastros": {
+      "get": {
+        "tags": [
+          "Credencial"
+        ],
+        "summary": "Retorna todas as credenciais cadastradas",
+        "description": "Retorna todas as credenciais cadastradas",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/deletarCadastro": {
+      "delete": {
+        "tags": [
+          "Credencial"
+        ],
+        "summary": "Remove uma credencial do banco de dados.",
+        "description": "Remove uma credencial do banco de dados localizando-o através de seu login.",
+        "parameters": [
+          {
+            "name": "login",
+            "description": "Login da credencial.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/atualizarSenha/{login}": {
+      "put": {
+        "tags": [
+          "Credencial"
+        ],
+        "summary": "Atualiza informações do usuário.",
+        "description": "Atualiza as informações do usuário, localizando-o através de seu login, atualizando a senha. ",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Login do usuário."
+          },
+          {
+            "name": "dados atualizados",
+            "in": "body",
+            "description": "Senha atualizada",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CadastroDaCredencial"
             }
           }
         ],
@@ -166,7 +284,7 @@
       "properties": {
         "nomeCompleto": {
           "type": "string",
-          "example": "Quentin Tarantino "
+          "example": "Quentin Tarantino"
         },
         "nomeDaMae": {
           "type": "string",
@@ -275,6 +393,31 @@
         "matricula": {
           "type": "string",
           "example": "02307485"
+        }
+      }
+    },
+    "CadastroDaCredencial": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string",
+          "example": "Valentina"
+        },
+        "sobrenome": {
+          "type": "string",
+          "example": "Silva"
+        },
+        "login": {
+          "type": "string",
+          "example": "01304487"
+        },
+        "senha": {
+          "type": "string",
+          "example": "123456"
+        },
+        "admin": {
+          "type": "boolean",
+          "example": true
         }
       }
     }

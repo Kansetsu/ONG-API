@@ -8,12 +8,17 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerFile = require("../doc/swagger_output.json");
 const app = express();
 const controllerCadastro = require("./controller/cadastro.controller");
+const controllerLogin = require("./controller/login.controller");
+
+// const keycloack = require("./config/keycloak-config.js").initKeycloak();
+// app.use(keycloack.middleware())
 
 mongoConnection();
 app.use(cors());
 app.use(express.json());
 app.use("/cristolandia/doc", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use("/cristolandia", controllerCadastro);
+app.use("/cristolandia", controllerLogin);
 
 app.listen(porta, () => {
     console.log(`Servidor está executando na porta ${porta}.`);
