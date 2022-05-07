@@ -7,7 +7,7 @@
         "doc": "doc"
     },
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
         "start": "npm run swagger-autogen && npm run nodemon index.js",
         "swagger-autogen": "node ./src/config/swagger.js"
     },
@@ -32,6 +32,7 @@
         "swagger-ui-express": "^4.3.0"
     },
     "devDependencies": {
+        "@shelf/jest-mongodb": "^2.2.2",
         "jest": "^28.0.3",
         "nodemon": "^2.0.16",
         "swagger-autogen": "^2.21.1"
