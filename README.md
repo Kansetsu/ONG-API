@@ -86,8 +86,8 @@ npm start
 ![GetAll-img](https://images2.imgbox.com/15/63/bUa4ef8q_o.png)
 - Retorna todos os acolhidos que estiverem cadastrados no banco de dados. Retorna um `json` que é convertido para um objeto Javascript como no exemplo abaixo: 
 ```javascript  
-     CadastroDoAcolhido: {
-            nomeCompleto: "Quentin Tarantino ",
+        {
+            nomeCompleto: "Quentin Tarantino",
             nomeDaMae: "Patrícia Amorim",
             nomeDoPai: "João Planaltina",
             naturalidade: "Brasileiro",
