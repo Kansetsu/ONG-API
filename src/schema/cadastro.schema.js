@@ -33,6 +33,6 @@ const cadastroSchema = new mongoose.Schema(
     }
 );
 
-const cadastroModel = mongoose.model("Acolhido", cadastroSchema);
+const cadastroModel = mongoose.model("acolhido", cadastroSchema);
 
 module.exports = {cadastroModel, cadastroSchema};

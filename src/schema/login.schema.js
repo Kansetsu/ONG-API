@@ -8,6 +8,6 @@ const loginSchema = new mongoose.Schema({
     admin: { type: Boolean }
 });
 
-const loginModel = mongoose.model("Credencial", loginSchema);
+const loginModel = mongoose.model("credencial", loginSchema);
 
 module.exports = loginModel;
