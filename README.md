@@ -33,7 +33,7 @@ URL="mongodb://localhost:0000/suaCollection"
 
 //por padrão a URL de testes é: 
 
-URL="mongodb://localhost:27017/Acolhidos"
+URL="mongodb://localhost:27017/Cristolandia"
 ``` 
 ### Após instalar as dependências, a documentação ficará visível na rota http://localhost:3333/cristolandia/doc/ ao executar a API com o comando:
 ```javascript  
