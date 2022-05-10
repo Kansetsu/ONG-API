@@ -1,8 +1,8 @@
-# Cristolândia-API ✝️
+# ONG-API ✝️
 
 ### Proposta 📝: 
 
-- API com as funcionalidades do sistema de cadastro da ONG Cristolândia. 
+- API com as funcionalidades do sistema de cadastro para uma ONG. 
 - Interação com o banco de dados para cadastrar as informações dos acolhidos.
 - Resgate e busca de informações do banco de dados.
 - Entrega e tratamento dos dados guardados no banco. 
@@ -33,9 +33,9 @@ URL="mongodb://localhost:0000/suaCollection"
 
 //por padrão a URL de testes é: 
 
-URL="mongodb://localhost:27017/Cristolandia"
+URL="mongodb://localhost:27017/ONG"
 ``` 
-### Após instalar as dependências, a documentação ficará visível na rota http://localhost:3333/cristolandia/doc/ ao executar a API com o comando:
+### Após instalar as dependências, a documentação ficará visível na rota http://localhost:3333/ong/doc/ ao executar a API com o comando:
 ```javascript  
 npm start 
 ``` 
@@ -44,7 +44,7 @@ npm start
 ## Acolhidos 🙎‍♂️
 
 ### POST 🟩
-#### **Cadastrar Acolhidos** : http://localhost:3333/cristolandia/cadastrarAcolhido 
+#### **Cadastrar Acolhidos** : http://localhost:3333/ong/cadastrarAcolhido 
 ![Post-img](https://images2.imgbox.com/87/ba/kU62fbEd_o.png)
 - Recebe um `json` para inserção dos dados. Dentro da aplicação recebe um objeto javascript que é convertido automaticamente para `json`
 - Cadastra os acolhidos com as informações fornecidas. Por padrão o `schema` passado é: 
@@ -82,7 +82,7 @@ npm start
 ``` 
 
 ### GET 🟦
-#### **Retorna todos os acolhidos cadastrados**: http://localhost:3333/cristolandia/todosOsAcolhidos
+#### **Retorna todos os acolhidos cadastrados**: http://localhost:3333/ong/todosOsAcolhidos
 ![GetAll-img](https://images2.imgbox.com/15/63/bUa4ef8q_o.png)
 - Retorna todos os acolhidos que estiverem cadastrados no banco de dados. Retorna um `json` que é convertido para um objeto Javascript como no exemplo abaixo: 
 ```javascript  
@@ -117,14 +117,14 @@ npm start
             matricula: "02307485"
         } 
 ``` 
-#### **Retorna um acolhido cadastrado, localizando ele por sua matrícula:** http://localhost:3333/cristolandia/acolhidosPorMatricula
+#### **Retorna um acolhido cadastrado, localizando ele por sua matrícula:** http://localhost:3333/ong/acolhidosPorMatricula
 -  O retorno é similar ao da rota anterior, porém retorna apenas o objeto que tiver a mesma matrícula solicitada.
 ![GetAcolhido-img](https://images2.imgbox.com/53/61/keY1FjSS_o.png)
-#### **Retorna os acolhidos cadastrados, localizando eles pela sua unidade:** http://localhost:3333/cristolandia/acolhidosPorUnidade
+#### **Retorna os acolhidos cadastrados, localizando eles pela sua unidade:** http://localhost:3333/ong/acolhidosPorUnidade
 -  Funciona como a rota anterior, alterando apenas o parâmetro utilizado para buscar os acolhidos. Essa rota retorna todos os que tiverem a unidade solicitada, não apenas um.
 ![GetUnidade-Img](https://images2.imgbox.com/2c/57/LazcELm8_o.png)
 ### DELETE 🟥
-#### **Deletar Acolhidos** : http://localhost:3333/cristolandia/deletarAcolhido
+#### **Deletar Acolhidos** : http://localhost:3333/ong/deletarAcolhido
 ![Delete-Img](https://images2.imgbox.com/1d/9e/HLkEDstj_o.png)
 - Remove um acolhido do banco de dados, localizando ele com sua matrícula. Essa rota retorna um `json` com duas informações. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado, e retorna também um contador informando se ele foi deletado ou não, sendo `0` para não deletado e `1` para deletado. 
 ```javascript
@@ -135,14 +135,14 @@ npm start
 ```
 
 ### PUT 🟨
-#### **Atualizar informações do acolhido** : http://localhost:3333/cristolandia/atualizarAcolhido/:matricula
+#### **Atualizar informações do acolhido** : http://localhost:3333/ong/atualizarAcolhido/:matricula
 ![Update-Img](https://images2.imgbox.com/5c/ac/GaRR6q3v_o.png)
 - Atualiza as informações do acolhido. Localizando ele através de sua matrícula e passando os dados a serem atualizados. Similar ao cadastro, porém precisando localizar o acolhido. 
 
 ## Credenciais 🔑
 
 ### POST 🟩
-#### **Cadastrar credencial** : http://localhost:3333/cristolandia/cadastrarAcesso
+#### **Cadastrar credencial** : http://localhost:3333/ong/cadastrarAcesso
 ![Post-img](https://images2.imgbox.com/ca/04/lOBORy0k_o.png)
 - Recebe um `json` para inserção dos dados. Dentro da aplicação recebe um objeto javascript que é convertido automaticamente para `json`
 - A senha é convertida em um hash ao ser adicionada no banco de dados por questões de segurança. Também é adicionado um `salt` para ser feita a validação do usuário.
@@ -158,7 +158,7 @@ npm start
 }
 ```
 ### GET 🟦
-#### **Retorna todas as credenciais cadastradas**: http://localhost:3333/cristolandia/buscarTodosOsCadastros
+#### **Retorna todas as credenciais cadastradas**: http://localhost:3333/ong/buscarTodosOsCadastros
 ![GetAll-img](https://images2.imgbox.com/f2/78/VXNa20hN_o.png)
 - Retorna todos as credenciais que estiverem cadastrados no banco de dados. Retorna um `json` que é convertido para um objeto Javascript como no exemplo abaixo: 
 ```javascript 
@@ -183,12 +183,12 @@ npm start
     "__v": 0
   }
 ```
-#### **Retorna uma credencial cadastrada, localizando-a por seu login:** http://localhost:3333/cristolandia/buscarCadastro
+#### **Retorna uma credencial cadastrada, localizando-a por seu login:** http://localhost:3333/ong/buscarCadastro
 -  O retorno é similar ao da rota anterior, porém retorna apenas o objeto que tiver a mesma matrícula solicitada.
 ![GetAcolhido-img](https://images2.imgbox.com/a4/b8/DUDxMSDv_o.png)
 
 ### DELETE 🟥
-#### **Deletar Credencial** : http://localhost:3333/cristolandia/deletarCadastro
+#### **Deletar Credencial** : http://localhost:3333/ong/deletarCadastro
 ![Delete-Img](https://images2.imgbox.com/49/14/z5cXKtSg_o.png)
 - Remove uma credencial do banco de dados, localizando-a com seu login. Essa rota retorna um `json` com duas informações. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado, e retorna também um contador informando se ele foi deletado ou não, sendo `0` para não deletado e `1` para deletado. 
 ```javascript
@@ -198,7 +198,7 @@ npm start
 }
 ```
 ### PUT 🟨
-#### **Atualizar informações do acolhido** : http://localhost:3333/cristolandia/atualizarSenha/:login
+#### **Atualizar informações do acolhido** : http://localhost:3333/ong/atualizarSenha/:login
 ![Update-Img](https://images2.imgbox.com/17/1a/i8ucOJ5T_o.png)
 - Atualiza as informações de uma credencial. Localizando-a através de seu login e passando os dados a serem atualizados. Similar ao cadastro, porém precisando localizar a credencial. 
 
