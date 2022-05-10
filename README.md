@@ -141,16 +141,19 @@ npm start
 
 ## Credenciais 🔑
 
+### POST 🟩
 #### **Cadastrar credencial** : http://localhost:3333/cristolandia/cadastrarAcesso
 ![Post-img](https://images2.imgbox.com/ca/04/lOBORy0k_o.png)
 - Recebe um `json` para inserção dos dados. Dentro da aplicação recebe um objeto javascript que é convertido automaticamente para `json`
+- A senha é convertida em um hash ao ser adicionada no banco de dados por questões de segurança. Também é adicionado um `salt` para ser feita a validação do usuário.
 - Cadastra a credencial com as informações fornecidas. Por padrão o `schema` passado é: 
 ```javascript
 {
     nome: { type: String },
     sobrenome: {type: String},
     login: { type: String },
-    senha: { type: String },
+    counter: { type: String },
+    nice: { type: String },
     admin: { type: Boolean }
 }
 ```
@@ -159,21 +162,23 @@ npm start
 ![GetAll-img](https://images2.imgbox.com/f2/78/VXNa20hN_o.png)
 - Retorna todos as credenciais que estiverem cadastrados no banco de dados. Retorna um `json` que é convertido para um objeto Javascript como no exemplo abaixo: 
 ```javascript 
-{
-    "_id": "6275e1fab88bd4a2af95216e",
+  {
+    "_id": "6279aec91b46b81e0cc833bb",
     "nome": "Valentina",
     "sobrenome": "Silva",
     "login": "01304487",
-    "senha": "123456",
+    "counter": "4979189bf1bbd213811ada6a0a0200dd",
+    "nice": "ea1be29bdad9c0c7f7b0ef799ef1e815",
     "admin": true,
     "__v": 0
   },
   {
-    "_id": "6275e221b88bd4a2af952170",
-    "nome": "Coralina",
-    "sobrenome": "Oliveira",
-    "login": "01304488",
-    "senha": "12345",
+    "_id": "6279b962ea03d60bb3c03858",
+    "nome": "Jacinto",
+    "sobrenome": "Aquino",
+    "login": "01308679",
+    "counter": "c3b113b616059b5bb466a0bbc251147f",
+    "nice": "2d05f365c5544cfb74c22ed45e7ae4d4",
     "admin": true,
     "__v": 0
   }
