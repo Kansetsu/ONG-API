@@ -53,7 +53,7 @@ const doc = {
             nome: "Valentina",
             sobrenome: "Silva",
             login: "01304487",
-            senha: "123456",
+            counter: "123456",
             admin: true
         }
     }

@@ -411,7 +411,7 @@
           "type": "string",
           "example": "01304487"
         },
-        "senha": {
+        "counter": {
           "type": "string",
           "example": "123456"
         },

@@ -1,8 +1,11 @@
 const loginModel = require("../schema/login.schema.js");
+const crypto = require("crypto");
 
 const loginService = {
     cadastrar: (dadosLogin) => {
-        return loginModel.create(dadosLogin);
+        const nice = crypto.randomBytes(16).toString("hex");
+        const counter = crypto.pbkdf2Sync(dadosLogin.counter, nice, 5, 16, "sha512").toString("hex")
+        return loginModel.create({...dadosLogin, nice, counter});
     },
 
     getCadastro: (login) => {

@@ -16,7 +16,6 @@ controller.post("/cadastrarAcolhido", (req, res) => {
         required: true,
         schema: { $ref: "#/definitions/CadastroDoAcolhido"}
     }*/
-
     res.send(cadastroService.create(req.body));
 });
 

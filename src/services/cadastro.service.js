@@ -1,5 +1,4 @@
 const { cadastroModel } = require("../schema/cadastro.schema");
-
 const cadastroService = {
     create: (dataInsert) => {
         return cadastroModel.create(dataInsert);

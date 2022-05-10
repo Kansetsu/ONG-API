@@ -4,7 +4,8 @@ const loginSchema = new mongoose.Schema({
     nome: { type: String },
     sobrenome: {type: String},
     login: { type: String },
-    senha: { type: String },
+    counter: { type: String },
+    nice: { type: String },
     admin: { type: Boolean }
 });
 
