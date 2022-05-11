@@ -16,9 +16,9 @@ const controllerLogin = require("./controller/login.controller");
 mongoConnection();
 app.use(cors());
 app.use(express.json());
-app.use("/cristolandia/doc", swaggerUi.serve, swaggerUi.setup(swaggerFile));
-app.use("/cristolandia", controllerCadastro);
-app.use("/cristolandia", controllerLogin);
+app.use("/ong/doc", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.use("/ong", controllerCadastro);
+app.use("/ong", controllerLogin);
 
 app.listen(porta, () => {
     console.log(`Servidor está executando na porta ${porta}.`);

@@ -14,7 +14,7 @@ const doc = {
         }
     },
     host: "localhost:3333",
-    basePath: "/cristolandia",
+    basePath: "/ong",
     schemes: ["http"],
     consumes: ['application/json'],
     produces: ['application/json'],
