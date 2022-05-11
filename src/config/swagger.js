@@ -6,11 +6,11 @@ const controllerFile = ['./src/controller/cadastro.controller.js', './src/contro
 // Responsável por gerar as informações para o arquivo swagger_output.json
 const doc = {
     info: {
-        version: "1.0.0",
-        title: "Cristolândia API",
-        description: "API desenvolvida para prover dados ao front-end do sistema de cadastros da Cristolandia",
+        version: "2.0.0",
+        title: "ONG API",
+        description: "API desenvolvida para prover dados ao front-end do sistema de cadastros de uma ONG",
         contact: {
-            email: "vinicius802010@gmail.com"
+            email: "storeexodia@gmail.com"
         }
     },
     host: "localhost:3333",
