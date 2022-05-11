@@ -19,6 +19,19 @@ controller.post("/cadastrarAcesso", (req, res) => {
     res.send(loginService.cadastrar(req.body));
 });
 
+controller.post("/validarAcesso", async (req, res) => {
+    // #swagger.tags = ['Credencial']
+    // #swagger.summary = 'Validar credencial de acesso.'
+    // #swagger.description = 'Validar cradencial de acesso do usuário. Retorna true caso a senha passada esteja correta e false para incorreta.'
+    /* #swagger.parameters['Login e Senha passado pelo usuário'] = {
+        in: 'body',
+        description: 'Senha passada pelo usuário do sistema.',
+        required: true,
+        schema: { $ref: "#/definitions/AcessoDaCredencial"}
+    }*/
+    res.send(await loginService.validarAcesso(req.body));
+});
+
 controller.get("/buscarCadastro", async (req, res) => {
     // #swagger.tags = ['Credencial']    
     // #swagger.summary = 'Retorna uma credencial pelo login.'

@@ -55,6 +55,10 @@ const doc = {
             login: "01304487",
             counter: "123456",
             admin: true
+        },
+        CredencialPassada: {
+            login: "01304487",
+            counter: "123456"
         }
     }
 }

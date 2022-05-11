@@ -184,6 +184,31 @@
         }
       }
     },
+    "/validarAcesso": {
+      "post": {
+        "tags": [
+          "Credencial"
+        ],
+        "summary": "Validar credencial de acesso.",
+        "description": "Validar cradencial de acesso do usuário. Retorna true caso a senha passada esteja correta e false para incorreta.",
+        "parameters": [
+          {
+            "name": "Login e Senha passado pelo usuário",
+            "in": "body",
+            "description": "Senha passada pelo usuário do sistema.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AcessoDaCredencial"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/buscarCadastro": {
       "get": {
         "tags": [
@@ -418,6 +443,19 @@
         "admin": {
           "type": "boolean",
           "example": true
+        }
+      }
+    },
+    "CredencialPassada": {
+      "type": "object",
+      "properties": {
+        "login": {
+          "type": "string",
+          "example": "01304487"
+        },
+        "counter": {
+          "type": "string",
+          "example": "123456"
         }
       }
     }
