@@ -144,6 +144,8 @@ npm start
 ### POST 🟩
 #### **Cadastrar credencial** : http://localhost:3333/ong/cadastrarAcesso
 ![Post-img](https://images2.imgbox.com/ca/04/lOBORy0k_o.png)
+
+
 - Recebe um `json` para inserção dos dados. Dentro da aplicação recebe um objeto javascript que é convertido automaticamente para `json`
 - A senha é convertida em um hash ao ser adicionada no banco de dados por questões de segurança. Também é adicionado um `salt` para ser feita a validação do usuário.
 - Cadastra a credencial com as informações fornecidas. Por padrão o `schema` passado é: 
@@ -157,6 +159,12 @@ npm start
     admin: { type: Boolean }
 }
 ```
+
+#### **Validar credencial** : http://localhost:3333/ong/validarAcesso
+![Post-img](https://images2.imgbox.com/de/b8/Fx36QX7u_o.png)
+
+- Recebe o login e a senha passada pelo usuário e faz a validação se está correto retornando ```{ valido: true }``` caso a credencial esteja correta ou ```{ valido: false }``` para incorreta.
+
 ### GET 🟦
 #### **Retorna todas as credenciais cadastradas**: http://localhost:3333/ong/buscarTodosOsCadastros
 ![GetAll-img](https://images2.imgbox.com/f2/78/VXNa20hN_o.png)
