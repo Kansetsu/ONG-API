@@ -198,7 +198,7 @@
             "description": "Senha passada pelo usuário do sistema.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/AcessoDaCredencial"
+              "$ref": "#/definitions/CredencialPassada"
             }
           }
         ],

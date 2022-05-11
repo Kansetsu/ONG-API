@@ -27,7 +27,7 @@ controller.post("/validarAcesso", async (req, res) => {
         in: 'body',
         description: 'Senha passada pelo usuário do sistema.',
         required: true,
-        schema: { $ref: "#/definitions/AcessoDaCredencial"}
+        schema: { $ref: "#/definitions/CredencialPassada"}
     }*/
     res.send(await loginService.validarAcesso(req.body));
 });
