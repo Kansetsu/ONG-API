@@ -156,7 +156,7 @@ npm start
     login: { type: String },
     counter: { type: String },
     nice: { type: String },
-    admin: { type: Boolean }
+    usuario: { type: String }
 }
 ```
 
