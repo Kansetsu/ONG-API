@@ -6,7 +6,7 @@ const loginSchema = new mongoose.Schema({
     login: { type: String },
     counter: { type: String },
     nice: { type: String },
-    admin: { type: Boolean }
+    usuario: { type: String }
 });
 
 const loginModel = mongoose.model("credencial", loginSchema);

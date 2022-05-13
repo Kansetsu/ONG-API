@@ -440,9 +440,9 @@
           "type": "string",
           "example": "123456"
         },
-        "admin": {
-          "type": "boolean",
-          "example": true
+        "usuario": {
+          "type": "string",
+          "example": "voluntário"
         }
       }
     },

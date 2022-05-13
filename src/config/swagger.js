@@ -54,7 +54,7 @@ const doc = {
             sobrenome: "Silva",
             login: "01304487",
             counter: "123456",
-            admin: true
+            usuario: "voluntário"
         },
         CredencialPassada: {
             login: "01304487",
