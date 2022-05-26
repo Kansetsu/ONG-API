@@ -1,7 +1,7 @@
-const swaggerAutogen = require('swagger-autogen')()
+const swaggerAutogen = require("swagger-autogen")();
 
-const outputFile = './doc/swagger_output.json'
-const controllerFile = ['./src/controller/cadastro.controller.js', './src/controller/login.controller.js']
+const outputFile = "./doc/swagger_output.json";
+const controllerFile = ["./src/controller/cadastro.controller.js", "./src/controller/login.controller.js"];
 
 // Responsável por gerar as informações para o arquivo swagger_output.json
 const doc = {
@@ -10,14 +10,14 @@ const doc = {
         title: "ONG API",
         description: "API desenvolvida para prover dados ao front-end do sistema de cadastros de uma ONG",
         contact: {
-            email: "storeexodia@gmail.com"
-        }
+            email: "storeexodia@gmail.com",
+        },
     },
     host: "localhost:3333",
     basePath: "/ong",
     schemes: ["http"],
-    consumes: ['application/json'],
-    produces: ['application/json'],
+    consumes: ["application/json"],
+    produces: ["application/json"],
     definitions: {
         CadastroDoAcolhido: {
             nomeCompleto: "Quentin Tarantino",
@@ -47,22 +47,41 @@ const doc = {
             contatoDeEmergencia1: "81 98726-7365",
             contatoDeEmergencia2: "81 98342-6557",
             dataDeSaida: "06-05-2022",
-            matricula: "02307485"
+            matricula: "02307485",
+            possuiFilhos: false,
+            situacaoDeRua: false,
+            tempoDeRua: "1 ano",
+            tempoDeDrogadicao: "1 ano",
+            tiposDeDrogas: "Maconha",
+            usaMedicamentos: false,
+            doencasPrecisaCuidados: false,
+            alergia: false,
+            acompanhamentoPsiquiatrico: false,
+            respondeProcesso: false,
+            recebeBeneficio: false,
+            religiao: "Protestantismo",
+            igrejaEvangelica: false,
+            batizado: false,
+            casaDeRecuperacao: false,
+            jaFoiAcolhido: false,
+            deficiencia: false,
+            antecedentesCriminais: false,
+            fazNasHorasVagas: "",
+            consideracoesDeAtendimento: "",
         },
         CadastroDaCredencial: {
             nome: "Valentina",
             sobrenome: "Silva",
             login: "01304487",
             counter: "123456",
-            usuario: "voluntário"
+            usuario: "voluntário",
         },
         CredencialPassada: {
             login: "01304487",
-            counter: "123456"
-        }
-    }
-}
-
+            counter: "123456",
+        },
+    },
+};
 
 //Gera um novo swagger_output.json quando você inicia o projeto, iniciando o index.js (npm run swagger-autogen)
 swaggerAutogen(outputFile, controllerFile, doc).then(() => {
