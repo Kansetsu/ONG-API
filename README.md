@@ -17,23 +17,23 @@
 
 # Sumário 📒: 
 
-### [Documentação](#documentação-)
+- [Documentação](#documentação-)
 
-### [Acolhidos](#acolhidos-)
+- [Acolhidos](#acolhidos-)
 
 - [POST](#post---acolhidos)
 - [GET](#get---acolhidos)
 - [DELETE](#delete---acolhidos)
 - [PUT](#put---acolhidos)
 
-### [Credenciais](#credenciais-)
+- [Credenciais](#credenciais-)
 
 - [POST](#post---credenciais)
 - [GET](#get---credenciais)
 - [DELETE](#delete---credenciais)
 - [PUT](#put---credenciais)
 
-### [Dados Médicos](#dados-médicos-)
+- [Dados Médicos](#dados-médicos-)
 - [POST](#post---médicos)
 - [GET](#get---médicos)
 - [DELETE](#delete---médicos)
