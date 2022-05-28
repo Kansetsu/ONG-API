@@ -17,7 +17,7 @@
 
 ## Index
 
-* [Acolhidos](#acolhidos)
+* [Acolhidos](#acolhidos-🙎‍♂️)
 * [Credenciais](#credenciais)
 * [Dados Médicos](#dados--medicos)
 
@@ -47,7 +47,7 @@ npm start
 ``` 
 ## Rotas 🌐:
 
-## Acolhidos
+## Acolhidos 🙎‍♂️
 
 ### POST 🟩
 #### **Cadastrar Acolhidos** : http://localhost:3333/ong/cadastrarAcolhido 
