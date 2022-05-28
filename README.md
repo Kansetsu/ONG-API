@@ -47,7 +47,7 @@ npm start
 ``` 
 ## Rotas 🌐:
 
-## Acolhidos 🙎‍♂️
+## Acolhidos
 
 ### POST 🟩
 #### **Cadastrar Acolhidos** : http://localhost:3333/ong/cadastrarAcolhido 
