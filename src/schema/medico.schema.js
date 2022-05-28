@@ -15,12 +15,21 @@ const medicoSchema = new mongoose.Schema({
     comoComecouNasDrogas: String,
     informacoesAdicionais: String,
     orientacoesPassadas: Boolean,
-    contatosDeEmergencia: mongoose.Schema.Types.Mixed,
+    contatosDeEmergencia: {
+        numero1: { type: String },
+        numero2: { type: String },
+    },
     evolucaoDoVinculo: String,
     reitegracaoFamiliar: String,
     antecedentesDependenciaQuimica: Boolean,
-    necessitaApoioJuridico: mongoose.Schema.Types.Mixed,
-    rendaPropria: mongoose.Schema.Types.Mixed,
+    necessitaApoioJuridico: {
+        necessita: { type: Boolean },
+        especifique: { type: String },
+    },
+    rendaPropria: {
+        possui: { type: Boolean },
+        queTipo: { type: String },
+    },
     expProfissional: String,
     propostaDeRenda: String,
     propostaDeMoradia: String,
@@ -30,4 +39,4 @@ const medicoSchema = new mongoose.Schema({
 
 const medicoModel = mongoose.model("medico", medicoSchema);
 
-module.exports =  medicoModel;
+module.exports = medicoModel;
