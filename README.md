@@ -250,6 +250,114 @@ npm start
 ![Update-Img](https://images2.imgbox.com/17/1a/i8ucOJ5T_o.png)
 - Atualiza as informações de uma credencial. Localizando-a através de seu login e passando os dados a serem atualizados. Similar ao cadastro, porém precisando localizar a credencial. 
 
+## Dados Médicos 🧑‍⚕️
+
+### POST 🟩
+#### **Cadastra os dados médicos do acolhido.** : http://localhost:3333/ong/cadastrarDadosMedicos 
+![Post-img](./doc/images/Post-DadosMedicos.png)
+- Recebe um `json` para inserção dos dados. Dentro da aplicação recebe um objeto javascript que é convertido automaticamente para `json`
+- Cadastra os dados médicos do acolhido com as informações fornecidas. Por padrão o `schema` passado é: 
+```javascript  
+ {
+    nome: { type: String, required: true },
+    dataNascimento: { type: String, required: true },
+    dataChegada: { type: String, required: true },
+    dataAtendimento: { type: String, required: true },
+    aspectosCognitivos: { type: String, required: true },
+    opniaoSituacao: { type: String, required: true },
+    consideraDependenteQuimico: { type: String, required: true },
+    composicaoFamiliar: { type: String, required: true },
+    relacoesParentais: { type: String, required: true },
+    relacionamentoComFamilia: { type: String, required: true },
+    reestabelecimentoFamiliar: { type: String, required: true },
+    comoComecouNasDrogas: { type: String, required: true },
+    informacoesAdicionais: { type: String, required: true },
+    orientacoesPassadas: { type: Boolean, required: true },
+    contatosDeEmergencia: {
+        numero1: { type: String, required: true },
+        numero2: { type: String },
+    },
+    evolucaoDoVinculo: { type: String, required: true },
+    reitegracaoFamiliar: { type: String, required: true },
+    antecedentesDependenciaQuimica: { type: Boolean, required: true },
+    necessitaApoioJuridico: {
+        necessita: { type: Boolean, required: true },
+        especifique: { type: String },
+    },
+    rendaPropria: {
+        possui: { type: Boolean, required: true },
+        queTipo: { type: String },
+    },
+    expProfissional: { type: String, required: true },
+    propostaDeRenda: { type: String, required: true },
+    propostaDeMoradia: { type: String, required: true },
+    objetivosDoAcolhido: { type: String, required: true },
+    tipoDeSaida: { type: String, required: true },
+ }
+``` 
+
+### GET 🟦
+#### **Retorna os dados médicos de todos os acolhidos.**: http://localhost:3333/ong/getTodosDadosMedicos
+![GetAll-img](./doc/images/Get-DadosMedicos.png)
+- Retorna os dados médicos de todos os acolhidos que estiverem cadastrados no banco de dados. Retorna um `json` que é convertido para um objeto Javascript como no exemplo abaixo: 
+```javascript  
+{
+  nome: "João",
+  dataNascimento: "06-05-2022",
+  dataChegada: "06-05-2022",
+  dataAtendimento: "06-05-2022",
+  aspectosCognitivos: "Info.",
+  opniaoSituacao: "Info.",
+  consideraDependenteQuimico: "Info.",
+  composicaoFamiliar: "Info.",
+  relacoesParentais: "Info.",
+  relacionamentoComFamilia: "Info.",
+  reestabelecimentoFamiliar: "Info.",
+  comoComecouNasDrogas: "Info.",
+  informacoesAdicionais: "Info.",
+  orientacoesPassadas: false,
+  contatosDeEmergencia: {
+      numero1: "11111111",
+      numero2: "11111111",
+  },
+  evolucaoDoVinculo: "Info.",
+  reitegracaoFamiliar: "Info.",
+  antecedentesDependenciaQuimica: false,
+  necessitaApoioJuridico: {
+      necessita: false,
+      especifique: "",
+  },
+  rendaPropria: {
+      possui: false,
+      queTipo: "",
+  },
+  expProfissional: "Info.",
+  propostaDeRenda: "Info.",
+  propostaDeMoradia: "Info.",
+  objetivosDoAcolhido: "Info.",
+  tipoDeSaida: "Info.",
+} 
+``` 
+#### **Retorna os dados médicos de um acolhido, utilizando o nome e a data de nascimento para localiza-lo:** http://localhost:3333/ong/getUmDadoMedico
+-  O retorno é similar ao da rota anterior, porém retorna apenas o objeto que tiver o nome e a data de nascimento solicitada.
+![GetDadosMedicos-img](./doc/image/Get-UmDadoMedico.png)
+
+### DELETE 🟥
+#### **Deletar Dados Médicos** : http://localhost:3333/ong/deletarDadosMedicos
+![Delete-Img](./doc/images/Delete-DadosMedicos.png)
+- Remove os dados médicos de um acolhido do banco de dados, localizando ele pelo nome e data de nascimento. Essa rota retorna um `json` com duas informações. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado, e retorna também um contador informando se ele foi deletado ou não, sendo `0` para não deletado e `1` para deletado. 
+```javascript
+{
+  "acknowledged": true,
+  "deletedCount": 1
+}
+```
+
+### PUT 🟨
+#### **Atualizar informações dos dados médicos de um acolhido** : http://localhost:3333/ong/atualizarAcolhido/:matricula
+![Update-Img](./doc/images/Update-DadosMedicos.png)
+- Atualiza as informações dos dados médicos de de um acolhido. Localizando-o através de seu nome e data de nascimento, repassando os dados necessários. Similar ao cadastro, porém precisando localizar o acolhido e efetuando a atualização. 
+
 ### Suporte 🆘
 
 #### Em casos de dúvidas ou sugestôes entrar em contato com o time exódia através do nosso [email](mailto:storeexodia@gmail.com)!
