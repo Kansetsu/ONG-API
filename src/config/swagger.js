@@ -1,7 +1,11 @@
 const swaggerAutogen = require("swagger-autogen")();
 
 const outputFile = "./doc/swagger_output.json";
-const controllerFile = ["./src/controller/cadastro.controller.js", "./src/controller/login.controller.js"];
+const controllerFile = [
+    "./src/controller/cadastro.controller.js",
+    "./src/controller/login.controller.js",
+    "./src/controller/medico.controller.js",
+];
 
 // Responsável por gerar as informações para o arquivo swagger_output.json
 const doc = {
@@ -79,6 +83,33 @@ const doc = {
         CredencialPassada: {
             login: "01304487",
             counter: "123456",
+        },
+        DadosMedicos: {
+            nome: "João",
+            dataNascimento: "06-05-2022",
+            dataChegada: "06-05-2022",
+            dataAtendimento: "06-05-2022",
+            aspectosCognitivos: "",
+            opniaoSituacao: "",
+            consideraDependenteQuimico: "",
+            composicaoFamiliar: "",
+            relacoesParentais: "",
+            relacionamentoComFamilia: "",
+            reestabelecimentoFamiliar: "",
+            comoComecouNasDrogas: "",
+            informacoesAdicionais: "",
+            orientacoesPassadas: false,
+            contatosDeEmergencia: { numero1: "11111111", numero2: "11111111" },
+            evolucaoDoVinculo: "",
+            reitegracaoFamiliar: "",
+            antecedentesDependenciaQuimica: false,
+            necessitaApoioJuridico: { necessita: true, especifique: "" },
+            rendaPropria: { possui: true, queTipo: "" },
+            expProfissional: "",
+            propostaDeRenda: "",
+            propostaDeMoradia: "",
+            objetivosDoAcolhido: "",
+            tipoDeSaida: "",
         },
     },
 };

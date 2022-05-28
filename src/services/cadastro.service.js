@@ -21,8 +21,6 @@ const cadastroService = {
     },
 
     updateAcolhido: (matricula, update) => {
-        console.log(matricula);
-        console.log({ ...update });
         return cadastroModel.findOneAndUpdate(matricula, update, { new: true });
     },
 };

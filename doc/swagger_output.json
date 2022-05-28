@@ -301,6 +301,145 @@
           }
         }
       }
+    },
+    "/cadastrarDadosMedicos": {
+      "post": {
+        "tags": [
+          "Medico"
+        ],
+        "summary": "Cadastra os dados médicos do acolhido.",
+        "description": "Cadastra os dados médicos do acolhido.",
+        "parameters": [
+          {
+            "name": "dados do acolhido",
+            "in": "body",
+            "description": "Informações do acolhido.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DadosMedicos"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/getTodosDadosMedicos": {
+      "get": {
+        "tags": [
+          "Medico"
+        ],
+        "summary": "Retorna os dados médicos de todos os acolhidos.",
+        "description": "Retorna os dados médicos de todos os acolhidos.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/getUmDadoMedico": {
+      "get": {
+        "tags": [
+          "Medico"
+        ],
+        "summary": "Retorna os dados médicos de um acolhido, utilizando o nome e a data de nascimento para localiza-lo.",
+        "description": "Retorna os dados médicos de um acolhido, utilizando o nome e a data de nascimento para localiza-lo.",
+        "parameters": [
+          {
+            "name": "nome",
+            "description": "Nome do acolhido.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "dataNascimento",
+            "description": "Data de nascimento do acolhido.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/deletarDadosMedicos": {
+      "delete": {
+        "tags": [
+          "Medico"
+        ],
+        "summary": "Remove os dados médicos de um acolhido.",
+        "description": "Remove os dados médicos de um acolhido, localizando ele pelo nome e data de nascimento. ",
+        "parameters": [
+          {
+            "name": "nome",
+            "description": "Nome do acolhido.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "dataNascimento",
+            "description": "Data de nascimento do acolhido.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/atualizarDadosMedicos/": {
+      "put": {
+        "tags": [
+          "Medico"
+        ],
+        "summary": "Atualiza informações dos dados médicos de um acolhido.",
+        "description": "Atualiza as informações dos dados médicos de de um acolhido, localizando-o através de seu nome e data de nascimento, repassando os dados necessários. ",
+        "parameters": [
+          {
+            "name": "nome",
+            "description": "Nome do acolhido.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "dataNascimento",
+            "description": "Data de nascimento do acolhido.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "dados atualizados",
+            "in": "body",
+            "description": "Dados médicos do acolhido atualizados.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DadosMedicos"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -536,6 +675,138 @@
         "counter": {
           "type": "string",
           "example": "123456"
+        }
+      }
+    },
+    "DadosMedicos": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string",
+          "example": "João"
+        },
+        "dataNascimento": {
+          "type": "string",
+          "example": "06-05-2022"
+        },
+        "dataChegada": {
+          "type": "string",
+          "example": "06-05-2022"
+        },
+        "dataAtendimento": {
+          "type": "string",
+          "example": "06-05-2022"
+        },
+        "aspectosCognitivos": {
+          "type": "string",
+          "example": ""
+        },
+        "opniaoSituacao": {
+          "type": "string",
+          "example": ""
+        },
+        "consideraDependenteQuimico": {
+          "type": "string",
+          "example": ""
+        },
+        "composicaoFamiliar": {
+          "type": "string",
+          "example": ""
+        },
+        "relacoesParentais": {
+          "type": "string",
+          "example": ""
+        },
+        "relacionamentoComFamilia": {
+          "type": "string",
+          "example": ""
+        },
+        "reestabelecimentoFamiliar": {
+          "type": "string",
+          "example": ""
+        },
+        "comoComecouNasDrogas": {
+          "type": "string",
+          "example": ""
+        },
+        "informacoesAdicionais": {
+          "type": "string",
+          "example": ""
+        },
+        "orientacoesPassadas": {
+          "type": "boolean",
+          "example": false
+        },
+        "contatosDeEmergencia": {
+          "type": "object",
+          "properties": {
+            "numero1": {
+              "type": "string",
+              "example": "11111111"
+            },
+            "numero2": {
+              "type": "string",
+              "example": "11111111"
+            }
+          }
+        },
+        "evolucaoDoVinculo": {
+          "type": "string",
+          "example": ""
+        },
+        "reitegracaoFamiliar": {
+          "type": "string",
+          "example": ""
+        },
+        "antecedentesDependenciaQuimica": {
+          "type": "boolean",
+          "example": false
+        },
+        "necessitaApoioJuridico": {
+          "type": "object",
+          "properties": {
+            "necessita": {
+              "type": "boolean",
+              "example": true
+            },
+            "especifique": {
+              "type": "string",
+              "example": ""
+            }
+          }
+        },
+        "rendaPropria": {
+          "type": "object",
+          "properties": {
+            "possui": {
+              "type": "boolean",
+              "example": true
+            },
+            "queTipo": {
+              "type": "string",
+              "example": ""
+            }
+          }
+        },
+        "expProfissional": {
+          "type": "string",
+          "example": ""
+        },
+        "propostaDeRenda": {
+          "type": "string",
+          "example": ""
+        },
+        "propostaDeMoradia": {
+          "type": "string",
+          "example": ""
+        },
+        "objetivosDoAcolhido": {
+          "type": "string",
+          "example": ""
+        },
+        "tipoDeSaida": {
+          "type": "string",
+          "example": ""
         }
       }
     }
