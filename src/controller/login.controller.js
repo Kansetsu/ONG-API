@@ -16,7 +16,9 @@ controller.post("/cadastrarAcesso", (req, res) => {
         required: true,
         schema: { $ref: "#/definitions/CadastroDaCredencial"}
     }*/
-    res.send(loginService.cadastrar(req.body));
+    res.send(loginService.cadastrar(req.body).catch((error) => {
+        console.log(`Ocorreu um erro: ${error}`);
+    }));
 });
 
 controller.post("/validarAcesso", async (req, res) => {
@@ -29,7 +31,9 @@ controller.post("/validarAcesso", async (req, res) => {
         required: true,
         schema: { $ref: "#/definitions/CredencialPassada"}
     }*/
-    res.send(await loginService.validarAcesso(req.body));
+    res.send(await loginService.validarAcesso(req.body).catch((error) => {
+        console.log(`Ocorreu um erro: ${error}`);
+    }));
 });
 
 controller.get("/buscarCadastro", async (req, res) => {
@@ -37,14 +41,18 @@ controller.get("/buscarCadastro", async (req, res) => {
     // #swagger.summary = 'Retorna uma credencial pelo login.'
     // #swagger.description = 'Retorna uma credencial pelo login.'
     // #swagger.parameters['login'] = { description: 'Login da credencial.', required: true}
-    res.send(await loginService.getCadastro(req.query));
+    res.send(await loginService.getCadastro(req.query).catch((error) => {
+        console.log(`Ocorreu um erro: ${error}`);
+    }));
 });
 
 controller.get("/buscarTodosOsCadastros", async (req, res) => {
     // #swagger.tags = ['Credencial']    
     // #swagger.summary = 'Retorna todas as credenciais cadastradas'
     // #swagger.description = 'Retorna todas as credenciais cadastradas'   
-    res.send(await loginService.getAllCadastros());
+    res.send(await loginService.getAllCadastros().catch((error) => {
+        console.log(`Ocorreu um erro: ${error}`);
+    }));
 });
 
 controller.delete("/deletarCadastro", async (req, res) => {
@@ -52,7 +60,9 @@ controller.delete("/deletarCadastro", async (req, res) => {
     // #swagger.summary = 'Remove uma credencial do banco de dados.'
     // #swagger.description = 'Remove uma credencial do banco de dados localizando-o através de seu login.'
     // #swagger.parameters['login'] = { description: 'Login da credencial.', required: true}
-    res.send(await loginService.deletarCadastro(req.query));
+    res.send(await loginService.deletarCadastro(req.query).catch((error) => {
+        console.log(`Ocorreu um erro: ${error}`);
+    }));
 });
 
 controller.put("/atualizarSenha/:login", async (req, res) => {
@@ -66,7 +76,9 @@ controller.put("/atualizarSenha/:login", async (req, res) => {
         required: true,
         schema: { $ref: "#/definitions/CadastroDaCredencial"}
     }*/
-    res.send(await loginService.atualizarSenha(req.params, req.body))
+    res.send(await loginService.atualizarSenha(req.params, req.body).catch((error) => {
+        console.log(`Ocorreu um erro: ${error}`);
+    }))
 });
 
 module.exports = controller

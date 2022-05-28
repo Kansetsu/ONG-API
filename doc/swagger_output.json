@@ -542,13 +542,18 @@
           "type": "number",
           "example": 0
         },
-        "contatoDeEmergencia1": {
-          "type": "string",
-          "example": "81 98726-7365"
-        },
-        "contatoDeEmergencia2": {
-          "type": "string",
-          "example": "81 98342-6557"
+        "contatosDeEmergencia": {
+          "type": "object",
+          "properties": {
+            "numero1": {
+              "type": "string",
+              "example": "81 98342-6557"
+            },
+            "numero2": {
+              "type": "string",
+              "example": "81 98726-7365"
+            }
+          }
         },
         "dataDeSaida": {
           "type": "string",
@@ -699,39 +704,39 @@
         },
         "aspectosCognitivos": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "opniaoSituacao": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "consideraDependenteQuimico": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "composicaoFamiliar": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "relacoesParentais": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "relacionamentoComFamilia": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "reestabelecimentoFamiliar": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "comoComecouNasDrogas": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "informacoesAdicionais": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "orientacoesPassadas": {
           "type": "boolean",
@@ -752,11 +757,11 @@
         },
         "evolucaoDoVinculo": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "reitegracaoFamiliar": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "antecedentesDependenciaQuimica": {
           "type": "boolean",
@@ -767,7 +772,7 @@
           "properties": {
             "necessita": {
               "type": "boolean",
-              "example": true
+              "example": false
             },
             "especifique": {
               "type": "string",
@@ -780,7 +785,7 @@
           "properties": {
             "possui": {
               "type": "boolean",
-              "example": true
+              "example": false
             },
             "queTipo": {
               "type": "string",
@@ -790,23 +795,23 @@
         },
         "expProfissional": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "propostaDeRenda": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "propostaDeMoradia": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "objetivosDoAcolhido": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         },
         "tipoDeSaida": {
           "type": "string",
-          "example": ""
+          "example": "Info."
         }
       }
     }

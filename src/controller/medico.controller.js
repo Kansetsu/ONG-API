@@ -15,14 +15,18 @@ controller.post("/cadastrarDadosMedicos", (req, res) => {
         required: true,
         schema: { $ref: "#/definitions/DadosMedicos"}
     }*/
-    res.send(medicoService.create(req.body));
+    res.send(medicoService.create(req.body).catch((error) => {
+        console.log(`Ocorreu um erro: ${error}`);
+    }));
 });
 
 controller.get("/getTodosDadosMedicos", async (req, res) => {
     // #swagger.tags = ['Medico']
     // #swagger.summary = 'Retorna os dados médicos de todos os acolhidos.'
     // #swagger.description = 'Retorna os dados médicos de todos os acolhidos.'
-    res.send(await medicoService.getTodosDadosMedicos());
+    res.send(await medicoService.getTodosDadosMedicos().catch((error) => {
+        console.log(`Ocorreu um erro: ${error}`);
+    }));
 });
 
 controller.get("/getUmDadoMedico", async (req, res) => {
@@ -31,7 +35,9 @@ controller.get("/getUmDadoMedico", async (req, res) => {
     // #swagger.description = 'Retorna os dados médicos de um acolhido, utilizando o nome e a data de nascimento para localiza-lo.'
     // #swagger.parameters['nome'] = { description: 'Nome do acolhido.', required: true }
     // #swagger.parameters['dataNascimento'] = { description: 'Data de nascimento do acolhido.', required: true}
-    res.send(await medicoService.getUmDadoMedico(req.query));
+    res.send(await medicoService.getUmDadoMedico(req.query).catch((error) => {
+        console.log(`Ocorreu um erro: ${error}`);
+    }));
 });
 
 controller.delete("/deletarDadosMedicos", async (req, res) => {
@@ -40,7 +46,9 @@ controller.delete("/deletarDadosMedicos", async (req, res) => {
     // #swagger.description = 'Remove os dados médicos de um acolhido, localizando ele pelo nome e data de nascimento. '
     // #swagger.parameters['nome'] = { description: 'Nome do acolhido.', required: true}
     // #swagger.parameters['dataNascimento'] = { description: 'Data de nascimento do acolhido.', required: true}
-    res.send(await medicoService.deleteDadoMedico(req.query));
+    res.send(await medicoService.deleteDadoMedico(req.query).catch((error) => {
+        console.log(`Ocorreu um erro: ${error}`);
+    }));
 });
 
 controller.put("/atualizarDadosMedicos/", async (req, res) => {
@@ -55,7 +63,9 @@ controller.put("/atualizarDadosMedicos/", async (req, res) => {
         required: true,
         schema: { $ref: "#/definitions/DadosMedicos"}
     }*/
-    res.send(await medicoService.updateDadoMedico(req.query, req.body));
+    res.send(await medicoService.updateDadoMedico(req.query, req.body).catch((error) => {
+        console.log(`Ocorreu um erro: ${error}`);
+    }));
 });
 
 module.exports = controller;

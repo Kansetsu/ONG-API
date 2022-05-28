@@ -11,8 +11,6 @@ const controllerCadastro = require("./controller/cadastro.controller");
 const controllerLogin = require("./controller/login.controller");
 const controllerMedico = require("./controller/medico.controller");
 
-// const keycloack = require("./config/keycloak-config.js").initKeycloak();
-// app.use(keycloack.middleware())
 
 mongoConnection();
 app.use(cors());
@@ -22,5 +20,5 @@ app.use("/ong", controllerCadastro);
 app.use("/ong", controllerLogin);
 app.use("/ong", controllerMedico);
 app.listen(porta, () => {
-    console.log(`Servidor está executando na porta ${porta}.`);
+    console.log(`Aplicação funcionado corretamente na porta: ${porta}.\nDocumentação executando em http://localhost:${porta}/ong/doc/`);
 });
