@@ -15,7 +15,7 @@
 - API REST com Express.
 - Testes unitários com Jest.
 
-# Sumário 📒: 
+## Sumário 📒: 
 
 - [Documentação](#documentação-)
 
@@ -39,7 +39,7 @@
      - [DELETE](#delete---médicos)
      - [PUT](#put---médicos)
 
-# Documentação 📃:
+## Documentação 📃:
 ![thumb](./doc/images/tumb.png)
 ### Instalem as dependências antes de iniciar a API. 
 ```javascript  
