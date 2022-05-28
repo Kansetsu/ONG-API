@@ -17,28 +17,27 @@
 
 # Sumário 📒: 
 
-### [Documentação 📃](#documentação-)
+### [Documentação](#documentação-)
 
-### [Acolhidos 🏠](#acolhidos-);
-Rotas 🌐: 
-- [POST 🟩](#post---acolhidos)
-- [GET 🟦](#get---acolhidos)
-- [DELETE 🟥](#delete---acolhidos)
-- [PUT 🟨](#put---acolhidos)
+### [Acolhidos](#acolhidos-)
 
-### [Credenciais 🔑](#credenciais-);
-Rotas 🌐:
-- [POST 🟩](#post---credenciais)
-- [GET 🟦](#get---credenciais)
-- [DELETE 🟥](#delete---credenciais)
-- [PUT 🟨](#put---credenciais)
+- [POST](#post---acolhidos)
+- [GET](#get---acolhidos)
+- [DELETE](#delete---acolhidos)
+- [PUT](#put---acolhidos)
 
-### [Dados Médicos 🏥](#dados-médicos-).
-Rotas 🌐:
-- [POST 🟩](#post---médicos)
-- [GET 🟦](#get---médicos)
-- [DELETE 🟥](#delete---médicos)
-- [PUT 🟨](#put---médicos)
+### [Credenciais](#credenciais-)
+
+- [POST](#post---credenciais)
+- [GET](#get---credenciais)
+- [DELETE](#delete---credenciais)
+- [PUT](#put---credenciais)
+
+### [Dados Médicos](#dados-médicos-)
+- [POST](#post---médicos)
+- [GET](#get---médicos)
+- [DELETE](#delete---médicos)
+- [PUT](#put---médicos)
 
 # Documentação 📃:
 ![thumb](./doc/images/tumb.png)
