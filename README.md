@@ -17,21 +17,21 @@
 
 ## Sumário 📒: 
 
-# [Acolhidos](#acolhidos-)
+## [Acolhidos](#acolhidos-)
 Rotas 🌐: 
 - [POST](#post---acolhidos)
 - [GET](#get---acolhidos)
 - [DELETE](#delete---acolhidos)
 - [PUT](#put---acolhidos)
 
-# [Credenciais](#credenciais-)
+## [Credenciais](#credenciais-)
 Rotas 🌐:
 - [POST](#post---credenciais)
 - [GET](#get---credenciais)
 - [DELETE](#delete---credenciais)
 - [PUT](#put---credenciais)
 
-# [Dados Médicos](#dados-médicos-)
+## [Dados Médicos](#dados-médicos-)
 Rotas 🌐:
 - [POST](#post---médicos)
 - [GET](#get---médicos)
