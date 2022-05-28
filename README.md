@@ -15,7 +15,7 @@
 - API REST com Express.
 - Testes unitários com Jest.
 
-## Sumário 📒: 
+# Sumário 📒: 
 
 ## [Acolhidos](#acolhidos-)
 Rotas 🌐: 
