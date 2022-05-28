@@ -340,7 +340,7 @@ npm start
 ``` 
 #### **Retorna os dados médicos de um acolhido, utilizando o nome e a data de nascimento para localiza-lo:** http://localhost:3333/ong/getUmDadoMedico
 -  O retorno é similar ao da rota anterior, porém retorna apenas o objeto que tiver o nome e a data de nascimento solicitada.
-![GetDadosMedicos-img](./doc/image/Get-UmDadoMedico.png)
+![GetDadoMedico-img](./doc/images/Get-DadoMedico.png)
 
 ### DELETE 🟥
 #### **Deletar Dados Médicos** : http://localhost:3333/ong/deletarDadosMedicos
