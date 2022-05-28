@@ -15,11 +15,28 @@
 - API REST com Express.
 - Testes unitários com Jest.
 
-## Sumário: 
-# 📒
-- [Acolhidos](#acolhidos)
-- [Credenciais](#credenciais)
-- [Dados Médicos](#dados-médicos)
+## Sumário 📒: 
+
+# [Acolhidos](#acolhidos-)
+Rotas 🌐: 
+- [POST](#post---acolhidos)
+- [GET](#get---acolhidos)
+- [DELETE](#delete---acolhidos)
+- [PUT](#put---acolhidos)
+
+# [Credenciais](#credenciais-)
+Rotas 🌐:
+- [POST](#post---credenciais)
+- [GET](#get---credenciais)
+- [DELETE](#delete---credenciais)
+- [PUT](#put---credenciais)
+
+# [Dados Médicos](#dados-médicos-)
+Rotas 🌐:
+- [POST](#post---médicos)
+- [GET](#get---médicos)
+- [DELETE](#delete---médicos)
+- [PUT](#put---médicos)
 
 ## Documentação 📃:
 ![thumb](./doc/images/tumb.png)
@@ -46,10 +63,10 @@ URL="mongodb://localhost:27017/ONG"
 npm start 
 ``` 
 ## Rotas 🌐:
-# 🙎‍♂️ **[⬆ Voltar para o Sumário](#sumário)**
-## Acolhidos
-### POST 🟩
-#### **Cadastrar Acolhidos** : http://localhost:3333/ong/cadastrarAcolhido 
+# **[⬆ Voltar para o Sumário](#sumário-)**
+## Acolhidos 🏠
+### POST - Acolhidos🟩
+#### Cadastrar Acolhidos: http://localhost:3333/ong/cadastrarAcolhido 
 ![Post-img](https://images2.imgbox.com/87/ba/kU62fbEd_o.png)
 - Recebe um `json` para inserção dos dados. Dentro da aplicação recebe um objeto javascript que é convertido automaticamente para `json`
 - Cadastra os acolhidos com as informações fornecidas. Por padrão o `schema` passado é: 
@@ -108,7 +125,7 @@ npm start
  }
 ``` 
 
-### GET 🟦
+### GET - Acolhidos🟦
 #### **Retorna todos os acolhidos cadastrados**: http://localhost:3333/ong/todosOsAcolhidos
 ![GetAll-img](https://images2.imgbox.com/15/63/bUa4ef8q_o.png)
 - Retorna todos os acolhidos que estiverem cadastrados no banco de dados. Retorna um `json` que é convertido para um objeto Javascript como no exemplo abaixo: 
@@ -172,7 +189,7 @@ npm start
 #### **Retorna os acolhidos cadastrados, localizando eles pela sua unidade:** http://localhost:3333/ong/acolhidosPorUnidade
 -  Funciona como a rota anterior, alterando apenas o parâmetro utilizado para buscar os acolhidos. Essa rota retorna todos os que tiverem a unidade solicitada, não apenas um.
 ![GetUnidade-Img](https://images2.imgbox.com/2c/57/LazcELm8_o.png)
-### DELETE 🟥
+### DELETE - Acolhidos🟥
 #### **Deletar Acolhidos** : http://localhost:3333/ong/deletarAcolhido
 ![Delete-Img](https://images2.imgbox.com/1d/9e/HLkEDstj_o.png)
 - Remove um acolhido do banco de dados, localizando ele com sua matrícula. Essa rota retorna um `json` com duas informações. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado, e retorna também um contador informando se ele foi deletado ou não, sendo `0` para não deletado e `1` para deletado. 
@@ -183,16 +200,16 @@ npm start
 }
 ```
 
-### PUT 🟨
+### PUT - Acolhidos🟨
 #### **Atualizar informações do acolhido** : http://localhost:3333/ong/atualizarAcolhido/:matricula
 ![Update-Img](https://images2.imgbox.com/5c/ac/GaRR6q3v_o.png)
 - Atualiza as informações do acolhido. Localizando ele através de sua matrícula e passando os dados a serem atualizados. Similar ao cadastro, porém precisando localizar o acolhido. 
 
 
-# 🔑 **[⬆ Voltar para o Sumário](#sumário)**
-## Credenciais
+# **[⬆ Voltar para o Sumário](#sumário-)**
+## Credenciais 🔑 
 
-### POST 🟩
+### POST - Credenciais🟩
 #### **Cadastrar credencial** : http://localhost:3333/ong/cadastrarAcesso
 ![Post-img](https://images2.imgbox.com/ca/04/lOBORy0k_o.png)
 
@@ -216,7 +233,7 @@ npm start
 
 - Recebe o login e a senha passada pelo usuário e faz a validação se está correto retornando ```{ valido: true }``` caso a credencial esteja correta ou ```{ valido: false }``` para incorreta.
 
-### GET 🟦
+### GET - Credenciais🟦
 #### **Retorna todas as credenciais cadastradas**: http://localhost:3333/ong/buscarTodosOsCadastros
 ![GetAll-img](https://images2.imgbox.com/f2/78/VXNa20hN_o.png)
 - Retorna todos as credenciais que estiverem cadastrados no banco de dados. Retorna um `json` que é convertido para um objeto Javascript como no exemplo abaixo: 
@@ -246,7 +263,7 @@ npm start
 -  O retorno é similar ao da rota anterior, porém retorna apenas o objeto que tiver a mesma matrícula solicitada.
 ![GetAcolhido-img](https://images2.imgbox.com/a4/b8/DUDxMSDv_o.png)
 
-### DELETE 🟥
+### DELETE - Credenciais🟥
 #### **Deletar Credencial** : http://localhost:3333/ong/deletarCadastro
 ![Delete-Img](https://images2.imgbox.com/49/14/z5cXKtSg_o.png)
 - Remove uma credencial do banco de dados, localizando-a com seu login. Essa rota retorna um `json` com duas informações. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado, e retorna também um contador informando se ele foi deletado ou não, sendo `0` para não deletado e `1` para deletado. 
@@ -256,16 +273,16 @@ npm start
   "deletedCount": 1
 }
 ```
-### PUT 🟨
+### PUT - Credenciais🟨
 #### **Atualizar informações do acolhido** : http://localhost:3333/ong/atualizarSenha/:login
 ![Update-Img](https://images2.imgbox.com/17/1a/i8ucOJ5T_o.png)
 - Atualiza as informações de uma credencial. Localizando-a através de seu login e passando os dados a serem atualizados. Similar ao cadastro, porém precisando localizar a credencial. 
 
-# 🧑‍⚕️ **[⬆ Voltar para o Sumário](#sumário)**
+# **[⬆ Voltar para o Sumário](#sumário-)**
 
-## Dados Médicos 
+## Dados Médicos 🏥
 
-### POST 🟩
+### POST - Médicos🟩
 #### **Cadastra os dados médicos do acolhido.** : http://localhost:3333/ong/cadastrarDadosMedicos 
 ![Post-img](./doc/images/Post-DadosMedicos.png)
 - Recebe um `json` para inserção dos dados. Dentro da aplicação recebe um objeto javascript que é convertido automaticamente para `json`
@@ -309,7 +326,7 @@ npm start
  }
 ``` 
 
-### GET 🟦
+### GET - Médicos🟦
 #### **Retorna os dados médicos de todos os acolhidos.**: http://localhost:3333/ong/getTodosDadosMedicos
 ![GetAll-img](./doc/images/Get-DadosMedicos.png)
 - Retorna os dados médicos de todos os acolhidos que estiverem cadastrados no banco de dados. Retorna um `json` que é convertido para um objeto Javascript como no exemplo abaixo: 
@@ -355,7 +372,7 @@ npm start
 -  O retorno é similar ao da rota anterior, porém retorna apenas o objeto que tiver o nome e a data de nascimento solicitada.
 ![GetDadoMedico-img](./doc/images/Get-DadoMedico.png)
 
-### DELETE 🟥
+### DELETE - Médicos🟥
 #### **Deletar Dados Médicos** : http://localhost:3333/ong/deletarDadosMedicos
 ![Delete-Img](./doc/images/Delete-DadosMedicos.png)
 - Remove os dados médicos de um acolhido do banco de dados, localizando ele pelo nome e data de nascimento. Essa rota retorna um `json` com duas informações. Se o objeto foi reconhecido na busca, que retorna `true` para localizado e `false` para não localizado, e retorna também um contador informando se ele foi deletado ou não, sendo `0` para não deletado e `1` para deletado. 
@@ -366,12 +383,12 @@ npm start
 }
 ```
 
-### PUT 🟨
+### PUT - Médicos🟨
 #### **Atualizar informações dos dados médicos de um acolhido** : http://localhost:3333/ong/atualizarAcolhido/:matricula
 ![Update-Img](./doc/images/Update-DadosMedicos.png)
 - Atualiza as informações dos dados médicos de de um acolhido. Localizando-o através de seu nome e data de nascimento, repassando os dados necessários. Similar ao cadastro, porém precisando localizar o acolhido e efetuando a atualização. 
 
-# **[⬆ Voltar para o Sumário](#sumário)**
+# **[⬆ Voltar para o Sumário](#sumário-)**
 
 ### Suporte 🆘
 
