@@ -17,28 +17,30 @@
 
 # Sumário 📒: 
 
-## [Acolhidos](#acolhidos-)
+### [Documentação 📃](#documentação-)
+
+### [Acolhidos 🏠](#acolhidos-);
 Rotas 🌐: 
-- [POST](#post---acolhidos)
-- [GET](#get---acolhidos)
-- [DELETE](#delete---acolhidos)
-- [PUT](#put---acolhidos)
+- [POST 🟩](#post---acolhidos)
+- [GET 🟦](#get---acolhidos)
+- [DELETE 🟥](#delete---acolhidos)
+- [PUT 🟨](#put---acolhidos)
 
-## [Credenciais](#credenciais-)
+### [Credenciais 🔑](#credenciais-);
 Rotas 🌐:
-- [POST](#post---credenciais)
-- [GET](#get---credenciais)
-- [DELETE](#delete---credenciais)
-- [PUT](#put---credenciais)
+- [POST 🟩](#post---credenciais)
+- [GET 🟦](#get---credenciais)
+- [DELETE 🟥](#delete---credenciais)
+- [PUT 🟨](#put---credenciais)
 
-## [Dados Médicos](#dados-médicos-)
+### [Dados Médicos 🏥](#dados-médicos-).
 Rotas 🌐:
-- [POST](#post---médicos)
-- [GET](#get---médicos)
-- [DELETE](#delete---médicos)
-- [PUT](#put---médicos)
+- [POST 🟩](#post---médicos)
+- [GET 🟦](#get---médicos)
+- [DELETE 🟥](#delete---médicos)
+- [PUT 🟨](#put---médicos)
 
-## Documentação 📃:
+# Documentação 📃:
 ![thumb](./doc/images/tumb.png)
 ### Instalem as dependências antes de iniciar a API. 
 ```javascript  
