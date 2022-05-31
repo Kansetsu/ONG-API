@@ -76,8 +76,7 @@ const doc = {
             consideracoesDeAtendimento: "",
         },
         CadastroDaCredencial: {
-            nome: "Valentina",
-            sobrenome: "Silva",
+            nomeCompleto: "Valentina Silva",
             login: "01304487",
             counter: "123456",
             usuario: "voluntário",

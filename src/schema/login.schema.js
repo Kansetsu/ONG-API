@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 
 const loginSchema = new mongoose.Schema({
-    nome: { type: String, required: true },
-    sobrenome: { type: String },
+    nomeCompleto: { type: String, required: true },
     login: { type: String, required: true },
     counter: { type: String, required: true },
     nice: { type: String },
