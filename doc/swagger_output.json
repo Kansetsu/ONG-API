@@ -537,7 +537,113 @@
         "unidadeDeOrigem": {
           "type": "string",
           "example": "Recife Centro"
+        },
+        "numeroDeInternacoes": {
+          "type": "number",
+          "example": 0
+        },
+        "contatosDeEmergencia": {
+          "type": "object",
+          "properties": {
+            "numero1": {
+              "type": "string",
+              "example": "81 98342-6557"
+            },
+            "numero2": {
+              "type": "string",
+              "example": "81 98726-7365"
+            }
+          }
+        },
+        "dataDeSaida": {
+          "type": "string",
+          "example": "06-05-2022"
+        },
+        "matricula": {
+          "type": "string",
+          "example": "02307485"
+        },
+        "possuiFilhos": {
+          "type": "boolean",
+          "example": false
+        },
+        "situacaoDeRua": {
+          "type": "boolean",
+          "example": false
+        },
+        "tempoDeRua": {
+          "type": "string",
+          "example": "1 ano"
+        },
+        "tempoDeDrogadicao": {
+          "type": "string",
+          "example": "1 ano"
+        },
+        "tiposDeDrogas": {
+          "type": "string",
+          "example": "Maconha"
+        },
+        "usaMedicamentos": {
+          "type": "boolean",
+          "example": false
+        },
+        "doencasPrecisaCuidados": {
+          "type": "boolean",
+          "example": false
+        },
+        "alergia": {
+          "type": "boolean",
+          "example": false
+        },
+        "acompanhamentoPsiquiatrico": {
+          "type": "boolean",
+          "example": false
+        },
+        "respondeProcesso": {
+          "type": "boolean",
+          "example": false
+        },
+        "recebeBeneficio": {
+          "type": "boolean",
+          "example": false
+        },
+        "religiao": {
+          "type": "string",
+          "example": "Protestantismo"
+        },
+        "igrejaEvangelica": {
+          "type": "boolean",
+          "example": false
+        },
+        "batizado": {
+          "type": "boolean",
+          "example": false
+        },
+        "casaDeRecuperacao": {
+          "type": "boolean",
+          "example": false
+        },
+        "jaFoiAcolhido": {
+          "type": "boolean",
+          "example": false
+        },
+        "deficiencia": {
+          "type": "boolean",
+          "example": false
+        },
+        "antecedentesCriminais": {
+          "type": "boolean",
+          "example": false
+        },
+        "fazNasHorasVagas": {
+          "type": "string",
+          "example": ""
+        },
+        "consideracoesDeAtendimento": {
+          "type": "string",
+          "example": ""
         }
+      }
     },
     "CadastroDaCredencial": {
       "type": "object",
@@ -706,5 +812,4 @@
       }
     }
   }
-}
 }
